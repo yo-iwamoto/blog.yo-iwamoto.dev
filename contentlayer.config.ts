@@ -32,6 +32,14 @@ export const Post = defineDocumentType(() => ({
       description: '最終更新日',
       required: true,
     },
+    tags: {
+      type: 'list',
+      of: {
+        type: 'string',
+      },
+      description: 'タグ',
+      required: true,
+    },
   },
   computedFields: {
     url: {

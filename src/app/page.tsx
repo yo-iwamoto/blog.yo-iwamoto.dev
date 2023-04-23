@@ -2,6 +2,11 @@ import { cn } from '@/lib/cn';
 import { formatDate } from '@/lib/formatDate';
 import { allPosts } from 'contentlayer/generated';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata = {
+  title: 'blog.yoiw.dev',
+} satisfies Metadata;
 
 export default function Page() {
   return (

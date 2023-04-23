@@ -10,8 +10,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <nav className='py-16 px-4'>
-      <div className='max-w-[735px] mx-auto'>
+    <nav className='px-4 py-16'>
+      <div className='mx-auto max-w-[735px]'>
         <ul>
           {allPosts.map(({ _id, url, title, postedAt, tags }, i) => (
             <li
@@ -20,14 +20,14 @@ export default function Page() {
                 'border-t': i > 0,
               })}
             >
-              <Link href={url} className='focus-visible:outline-indigo-400 hover:text-gray-600'>
+              <Link href={url} className='hover:text-gray-600 focus-visible:outline-indigo-400'>
                 <article className='grid gap-2'>
-                  <p className='font-bold text-xl md:text-3xl'>{title}</p>
+                  <p className='text-xl font-bold md:text-3xl'>{title}</p>
                   <span className='flex items-center gap-2'>
                     <time dateTime={postedAt}>{formatDate(postedAt)}</time>
                     <span>
                       {tags.map((tag) => (
-                        <span key={tag} className='text-sm px-2 py-1 text-white bg-gray-900 rounded-md'>
+                        <span key={tag} className='rounded-md bg-gray-900 px-2 py-1 text-sm text-white'>
                           #{tag}
                         </span>
                       ))}

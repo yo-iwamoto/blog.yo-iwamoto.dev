@@ -17,7 +17,7 @@ export const BreadCrumb = ({ nodes }: Props) => {
           )}
 
           <a
-            className='text-indigo-400 whitespace-nowrap hover:underline focus:outline-none focus-visible:ring-2'
+            className='whitespace-nowrap text-indigo-400 hover:underline focus:outline-none focus-visible:ring-2'
             href={node.url}
           >
             {node.title}

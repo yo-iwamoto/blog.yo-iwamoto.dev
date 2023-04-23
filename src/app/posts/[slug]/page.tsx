@@ -24,6 +24,16 @@ export function generateMetadata({ params: { slug } }: { params: PageParams }) {
 
   return {
     title: post.title,
+    openGraph: {
+      type: 'article',
+      title: `${post.title} | blog.yoiw.dev`,
+      url: post.url,
+      locale: 'ja',
+      siteName: 'blog.yoiw.dev',
+    },
+    twitter: {
+      card: 'summary',
+    },
   } satisfies Metadata;
 }
 
@@ -42,19 +52,19 @@ export default function Page({ params: { slug } }: { params: PageParams }) {
 
   return (
     <div className='px-4 py-10'>
-      <div className='max-w-[735px] mx-auto'>
+      <div className='mx-auto max-w-[735px]'>
         <nav className='mb-6'>
           <BreadCrumb nodes={[{ title: slug, url }]} />
         </nav>
 
         <article>
           <div className='mb-12'>
-            <h1 className='font-bold text-2xl md:text-3xl xl:text-4xl mb-4'>{title}</h1>
+            <h1 className='mb-4 text-2xl font-bold md:text-3xl xl:text-4xl'>{title}</h1>
             <div className='flex items-center gap-2'>
               <time dateTime={postedAt}>{formatDate(postedAt)}</time>
               <span>
                 {tags.map((tag) => (
-                  <Link key={tag} className='text-sm px-2 py-1 text-white bg-gray-900 rounded-md' href={`/tags/${tag}`}>
+                  <Link key={tag} className='rounded-md bg-gray-900 px-2 py-1 text-sm text-white' href={`/tags/${tag}`}>
                     #{tag}
                   </Link>
                 ))}
@@ -64,7 +74,7 @@ export default function Page({ params: { slug } }: { params: PageParams }) {
 
           <div
             className={cn(
-              'prose prose-sm md:prose-lg prose-pre:p-2 prose-code:font-normal prose-code:unset prose-code:before:hidden prose-code:after:hidden mx-auto',
+              'prose-code:unset prose prose-sm mx-auto md:prose-lg prose-code:font-normal prose-code:before:hidden prose-code:after:hidden prose-pre:p-2',
               'prose-h1:text-xl md:prose-h1:text-3xl',
               'mb-20',
               classNames.content
@@ -74,7 +84,7 @@ export default function Page({ params: { slug } }: { params: PageParams }) {
           </div>
         </article>
 
-        <footer className='max-w-[735px] mx-auto'>
+        <footer className='mx-auto max-w-[735px]'>
           <nav>
             <BreadCrumb nodes={[{ title: slug, url }]} />
           </nav>

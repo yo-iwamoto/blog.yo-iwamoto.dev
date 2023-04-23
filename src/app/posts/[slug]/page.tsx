@@ -27,7 +27,7 @@ export function generateMetadata({ params: { slug } }: { params: PageParams }) {
     openGraph: {
       type: 'article',
       title: `${post.title} | blog.yoiw.dev`,
-      url: post.url,
+      url: `https://blog.yoiw.dev${post.url}`,
       locale: 'ja',
       siteName: 'blog.yoiw.dev',
     },

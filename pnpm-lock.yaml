@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   contentlayer:
     specifier: 0.3.1
     version: 0.3.1(esbuild@0.17.17)

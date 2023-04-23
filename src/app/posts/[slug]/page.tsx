@@ -1,4 +1,4 @@
-import classNames from '@/styles/modules/mdxCOntent.module.scss';
+import classNames from '@/styles/modules/mdxContent.module.scss';
 import { PostBody } from '@/components/client/PostBody';
 import { allPosts } from 'contentlayer/generated';
 import { cn } from '@/lib/cn';
@@ -64,7 +64,7 @@ export default function Page({ params: { slug } }: { params: PageParams }) {
 
           <div
             className={cn(
-              'prose prose-sm md:prose-lg prose-code:font-normal prose-code:unset prose-code:before:hidden prose-code:after:hidden mx-auto',
+              'prose prose-sm md:prose-lg prose-pre:p-2 prose-code:font-normal prose-code:unset prose-code:before:hidden prose-code:after:hidden mx-auto',
               'prose-h1:text-xl md:prose-h1:text-3xl',
               'mb-20',
               classNames.content

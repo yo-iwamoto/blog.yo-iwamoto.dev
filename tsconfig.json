@@ -17,7 +17,8 @@
     "incremental": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "module": "esnext",
     "resolveJsonModule": true,
@@ -28,6 +29,6 @@
       }
     ]
   },
-  "include": ["src", "next-env.d.ts", ".next/types/**/*.ts"],
+  "include": ["src", "next-env.d.ts", ".next/types/**/*.ts", ".contentlayer/generated"],
   "exclude": ["node_modules"]
 }

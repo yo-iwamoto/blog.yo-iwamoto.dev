@@ -1,0 +1,66 @@
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeCodeTitles from 'rehype-code-titles';
+import rehypePrism from 'rehype-prism-plus';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLink from 'rehype-external-links';
+import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
+
+export const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: `posts/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'タイトル',
+      required: true,
+    },
+    slug: {
+      type: 'string',
+      description: 'slug',
+      required: true,
+    },
+    postedAt: {
+      type: 'date',
+      description: '公開日',
+      required: true,
+    },
+    lastUpdatedAt: {
+      type: 'date',
+      description: '最終更新日',
+      required: true,
+    },
+  },
+  computedFields: {
+    url: {
+      type: 'string',
+      resolve: (post) => `/posts/${post.slug}`,
+    },
+  },
+}));
+
+export default makeSource({
+  contentDirPath: 'data',
+  documentTypes: [Post],
+  mdx: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [
+      rehypeSlug,
+      rehypeCodeTitles,
+      rehypePrism,
+      rehypeAccessibleEmojis,
+      (option) =>
+        rehypeAutolinkHeadings({
+          ...option,
+          behavior: 'wrap',
+        }),
+      (option) =>
+        rehypeExternalLink({
+          ...option,
+          target: '_blank',
+        }),
+    ],
+  },
+});

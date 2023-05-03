@@ -40,6 +40,12 @@ export const Post = defineDocumentType(() => ({
       description: 'タグ',
       required: true,
     },
+    draft: {
+      type: 'boolean',
+      description: '下書き状態であるかどうか',
+      required: false,
+      default: false,
+    },
   },
   computedFields: {
     url: {

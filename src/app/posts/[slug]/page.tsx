@@ -13,9 +13,11 @@ type PageParams = {
 };
 
 export function generateStaticParams() {
-  return allPosts.map((post) => ({
-    slug: post._id,
-  })) satisfies PageParams[];
+  return allPosts
+    .filter((post) => !post.draft)
+    .map((post) => ({
+      slug: post._id,
+    })) satisfies PageParams[];
 }
 
 export function generateMetadata({ params: { slug } }: { params: PageParams }) {

@@ -5,6 +5,7 @@ import rehypeCodeTitles from 'rehype-code-titles';
 import rehypePrism from 'rehype-prism-plus';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLink from 'rehype-external-links';
+import rehypeShiftHeading from 'rehype-shift-heading';
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 
 export const Post = defineDocumentType(() => ({
@@ -65,6 +66,10 @@ export default makeSource({
       rehypeCodeTitles,
       rehypePrism,
       rehypeAccessibleEmojis,
+      () =>
+        rehypeShiftHeading({
+          shift: 1,
+        }),
       (option) =>
         rehypeAutolinkHeadings({
           ...option,

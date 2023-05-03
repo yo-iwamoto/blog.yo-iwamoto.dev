@@ -76,8 +76,8 @@ export default function Page({ params: { slug } }: { params: PageParams }) {
 
           <div
             className={cn(
-              'prose-code:unset prose prose-sm mx-auto md:prose-lg prose-code:font-normal prose-code:before:hidden prose-code:after:hidden prose-pre:p-2',
-              'prose-h1:text-xl md:prose-h1:text-3xl',
+              'prose-code:unset prose prose-sm mx-auto md:prose-lg prose-code:font-normal prose-code:before:hidden prose-code:after:hidden',
+              'lg:prose-pre:text-md prose-h1:text-xl prose-pre:p-2 prose-pre:text-sm md:prose-h1:text-3xl',
               'mb-20',
               classNames.content
             )}

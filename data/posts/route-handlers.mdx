@@ -9,7 +9,7 @@ tags: [nextjs]
 公式ドキュメント  
 [Routing: Route Handlers | Next.js](https://beta.nextjs.org/docs/routing/route-handlers)
 
-## tldr
+# tldr
 
 これまで `pages` directory では例えば **`/pages/api/hello.ts`** を作成して以下のように書いていましたが、
 
@@ -27,7 +27,7 @@ export function GET(req) {
 }
 ```
 
-## 変わったこと
+# 変わったこと
 
 それぞれのインターフェース変更についての細かい意思決定プロセスは全く追っていませんが、ひとまず表面的には以下のような変更があります。
 
@@ -35,7 +35,7 @@ export function GET(req) {
 [2. ファイルを置く場所が変わった](#ファイルを置く場所が変わった)  
 [3. ハンドラの API が変わった](#ハンドラの-api-が変わった)
 
-### 特定のメソッドに対してのハンドラを named export するようになった
+## 特定のメソッドに対してのハンドラを named export するようになった
 
 これまで全ての HTTP method に default export されたハンドラが割り当てられていましたが、`GET` や `POST` のように特定のメソッドに対してのハンドラを named export するように変更されました。  
 [Supported HTTP Methods | Next.js](https://beta.nextjs.org/docs/routing/route-handlers#supported-http-methods)
@@ -52,12 +52,12 @@ export default function handler(req, res) {
 
 これを愚直に書いていたか、ある程度共通化していたか、うまいことミドルウェアを噛ませていたかはさておき、単純に嬉しい update かと思います。
 
-### ファイルを置く場所が変わった
+## ファイルを置く場所が変わった
 
 [`app` directory 自体の変更](https://beta.nextjs.org/docs/routing/fundamentals)と言えますが、ファイルを置く場所が `/pages/api/**/*.tsx` から、`/app/**/route.tsx` に変わりました。  
 例えば `/api/posts` のエンドポイントはこれまで **`/pages/api/posts/index.tsx`** に置いていたファイルは、**`/app/posts/route.tsx`** に置くようになります。
 
-### ハンドラの API が変わった
+## ハンドラの API が変わった
 
 これまでの `NextApiHandler` は比較的 express like で、`req` と `res` を受け取り、`res.json()` などでレスポンスしていました。  
 Route Handlers ではよりローレベル / ブラウザネイティブな API が露出していて、[Fetch API の Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) を受け取り、関数から [Fetch API の Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) を返します。
@@ -76,6 +76,6 @@ export async function GET(request: NextRequest) {
 }
 ```
 
-## 以上です
+# 以上です
 
 大体こんな感じでしょうか？

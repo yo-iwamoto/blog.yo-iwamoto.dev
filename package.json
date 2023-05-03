@@ -53,6 +53,7 @@
     "rehype-code-titles": "1.2.0",
     "rehype-external-links": "^2.0.1",
     "rehype-prism-plus": "1.5.1",
+    "rehype-shift-heading": "^1.0.2",
     "rehype-slug": "5.1.0",
     "remark-gfm": "3.0.1",
     "sass": "^1.62.0",

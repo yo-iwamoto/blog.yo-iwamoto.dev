@@ -40,11 +40,11 @@ devDependencies:
     specifier: 18.15.13
     version: 18.15.13
   '@types/react':
-    specifier: 18.0.38
-    version: 18.0.38
+    specifier: 18.2.6
+    version: 18.2.6
   '@types/react-dom':
-    specifier: 18.0.11
-    version: 18.0.11
+    specifier: 18.2.4
+    version: 18.2.4
   '@types/testing-library__jest-dom':
     specifier: 5.14.5
     version: 5.14.5
@@ -111,6 +111,9 @@ devDependencies:
   rehype-prism-plus:
     specifier: 1.5.1
     version: 1.5.1
+  rehype-shift-heading:
+    specifier: ^1.0.2
+    version: 1.0.2
   rehype-slug:
     specifier: 5.1.0
     version: 5.1.0
@@ -1335,7 +1338,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       '@testing-library/dom': 9.2.0
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.4
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: true
@@ -1447,14 +1450,14 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react-dom@18.0.11:
-    resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
+  /@types/react-dom@18.2.4:
+    resolution: {integrity: sha512-G2mHoTMTL4yoydITgOGwWdWMVd8sNgyEP85xVmMKAPUBwQWm9wBPQUmvbeF4V3WBY1P7mmL4BkjQ0SqUpf1snw==}
     dependencies:
-      '@types/react': 18.0.38
+      '@types/react': 18.2.6
     dev: true
 
-  /@types/react@18.0.38:
-    resolution: {integrity: sha512-ExsidLLSzYj4cvaQjGnQCk4HFfVT9+EZ9XZsQ8Hsrcn8QNgXtpZ3m9vSIC2MWtx7jHictK6wYhQgGh6ic58oOw==}
+  /@types/react@18.2.6:
+    resolution: {integrity: sha512-wRZClXn//zxCFW+ye/D2qY65UsYP1Fpex2YXorHc8awoNamkMZSvBxwxdYVInsHOZZd2Ppq8isnSzJL5Mpf8OA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -3305,6 +3308,14 @@ packages:
       web-namespaces: 2.0.1
       zwitch: 2.0.4
     dev: false
+
+  /hast-util-shift-heading@3.0.1:
+    resolution: {integrity: sha512-4/I6/m3RC9/joGzsNTvl2uHcmPoQlNffzFnYNvSm1VQKL1/AYg9KrAp5ir/yzNSHD/fXpwiJlQ2aFsqTmQptBg==}
+    dependencies:
+      '@types/hast': 2.3.4
+      hast-util-heading-rank: 2.1.1
+      unist-util-visit: 4.1.2
+    dev: true
 
   /hast-util-to-estree@2.3.2:
     resolution: {integrity: sha512-YYDwATNdnvZi3Qi84iatPIl1lWpXba1MeNrNbDfJfVzEBZL8uUmtR7mt7bxKBC8kuAuvb0bkojXYZzsNHyHCLg==}
@@ -5369,6 +5380,14 @@ packages:
       rehype-parse: 8.0.4
       unist-util-filter: 4.0.1
       unist-util-visit: 4.1.2
+    dev: true
+
+  /rehype-shift-heading@1.0.2:
+    resolution: {integrity: sha512-fP2DOp7X+jHmFfkTs9hCm+v4RaKUJj2nr2XaZf4EbEqItXj5q9tQ8lNvenOaEyKYL2t9R/ZlvZaJgjAgEY8f7w==}
+    dependencies:
+      '@types/hast': 2.3.4
+      hast-util-shift-heading: 3.0.1
+      unified: 10.1.2
     dev: true
 
   /rehype-slug@5.1.0:

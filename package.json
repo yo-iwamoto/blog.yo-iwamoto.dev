@@ -50,7 +50,7 @@
     "rehype-accessible-emojis": "0.3.2",
     "rehype-autolink-headings": "6.1.1",
     "rehype-code-titles": "1.2.0",
-    "rehype-external-links": "2.0.1",
+    "rehype-external-links": "2.1.0",
     "rehype-prism-plus": "1.5.1",
     "rehype-shift-heading": "1.0.2",
     "rehype-slug": "5.1.0",

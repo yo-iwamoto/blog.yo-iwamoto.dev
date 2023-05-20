@@ -1,5 +1,5 @@
 {
-  "name": "my-next-template",
+  "name": "blog.yoiw.dev",
   "license": "MIT",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@t3-oss/env-nextjs": "^0.3.1",
     "@vercel/og": "0.5.4",
     "classnames": "2.3.2",
     "contentlayer": "0.3.2",
@@ -23,7 +24,8 @@
     "next-contentlayer": "0.3.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-link-previewer": "1.0.8"
+    "react-link-previewer": "1.0.8",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@tailwindcss/typography": "0.5.9",

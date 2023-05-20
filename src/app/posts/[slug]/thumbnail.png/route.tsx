@@ -1,14 +1,17 @@
 /* eslint-disable react/no-unknown-property */
 
-import { NextResponse } from 'next/server';
+import { allPosts } from 'contentlayer/generated';
 import { ImageResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export const GET = (req: NextRequest) => {
-  const title = req.nextUrl.searchParams.get('title');
-  if (title === null) {
-    return NextResponse.json({ error: 'title is required' }, { status: 400 });
-  }
+type Parameter = {
+  params: {
+    slug: string;
+  };
+};
+
+export const GET = async (_: NextRequest, { params: { slug } }: Parameter) => {
+  const title = allPosts.find((p) => p.slug === slug)?.title;
 
   return new ImageResponse(
     (

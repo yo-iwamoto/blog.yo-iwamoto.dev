@@ -31,7 +31,7 @@ export function generateMetadata({ params: { slug } }: { params: PageParams }) {
       type: 'article',
       title: `${post.title} | blog.yoiw.dev`,
       url: `${env.WEBSITE_URL}${post.url}`,
-      images: [{ url: `${env.WEBSITE_URL}/api/thumbnail.png?title=${post.title}` }],
+      images: [{ url: `${env.WEBSITE_URL}/posts/${slug}/thumbnail.png` }],
       locale: 'ja',
       siteName: 'blog.yoiw.dev',
     },

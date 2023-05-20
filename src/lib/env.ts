@@ -3,10 +3,10 @@ import { z } from 'zod';
 
 export const env = createEnv({
   server: {
-    VERCEL_URL: z.string(),
+    WEBSITE_URL: z.string().url(),
   },
   client: {},
   runtimeEnv: {
-    VERCEL_URL: process.env.VERCEL_URL,
+    WEBSITE_URL: process.env.WEBSITE_URL,
   },
 });

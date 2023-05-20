@@ -4,7 +4,7 @@ import { allPosts } from 'contentlayer/generated';
 import { cn } from '@/lib/cn';
 import { formatDate } from '@/lib/formatDate';
 import { BreadCrumb } from '@/components/BreadCrumb';
-import { websiteUrl } from '@/lib/url';
+import { env } from '@/lib/env';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -30,8 +30,8 @@ export function generateMetadata({ params: { slug } }: { params: PageParams }) {
     openGraph: {
       type: 'article',
       title: `${post.title} | blog.yoiw.dev`,
-      url: `${websiteUrl}${post.url}`,
-      images: [{ url: `${websiteUrl}/api/thumbnail.png?title=${post.title}` }],
+      url: `${env.WEBSITE_URL}${post.url}`,
+      images: [{ url: `${env.WEBSITE_URL}/api/thumbnail.png?title=${post.title}` }],
       locale: 'ja',
       siteName: 'blog.yoiw.dev',
     },

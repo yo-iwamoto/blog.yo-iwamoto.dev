@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@t3-oss/env-nextjs':
     specifier: ^0.3.1
@@ -49,11 +53,11 @@ devDependencies:
     specifier: 20.1.2
     version: 20.1.2
   '@types/react':
-    specifier: 18.2.6
-    version: 18.2.6
+    specifier: 18.2.22
+    version: 18.2.22
   '@types/react-dom':
-    specifier: 18.2.4
-    version: 18.2.4
+    specifier: 18.2.7
+    version: 18.2.7
   '@types/testing-library__jest-dom':
     specifier: 5.14.5
     version: 5.14.5
@@ -1393,7 +1397,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.5
       '@testing-library/dom': 9.2.0
-      '@types/react-dom': 18.2.4
+      '@types/react-dom': 18.2.7
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: true
@@ -1505,14 +1509,14 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react-dom@18.2.4:
-    resolution: {integrity: sha512-G2mHoTMTL4yoydITgOGwWdWMVd8sNgyEP85xVmMKAPUBwQWm9wBPQUmvbeF4V3WBY1P7mmL4BkjQ0SqUpf1snw==}
+  /@types/react-dom@18.2.7:
+    resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
     dependencies:
-      '@types/react': 18.2.6
+      '@types/react': 18.2.22
     dev: true
 
-  /@types/react@18.2.6:
-    resolution: {integrity: sha512-wRZClXn//zxCFW+ye/D2qY65UsYP1Fpex2YXorHc8awoNamkMZSvBxwxdYVInsHOZZd2Ppq8isnSzJL5Mpf8OA==}
+  /@types/react@18.2.22:
+    resolution: {integrity: sha512-60fLTOLqzarLED2O3UQImc/lsNRgG0jE/a1mPW9KjMemY0LMITWEsbS4VvZ4p6rorEHd5YKxxmMKSDK505GHpA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3

@@ -7,7 +7,7 @@ async function getPostsRaw(): Promise<Post[]> {
     appUid: 'blog-yoiw-dev',
     modelUid: 'article',
     query: {
-      order: ['-_sys.raw.firstPublishedAt'],
+      order: ['-publishDate'],
     },
   });
 

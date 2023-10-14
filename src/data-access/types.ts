@@ -11,4 +11,5 @@ export type Post = Content & {
   tags: Tag[];
   body: string;
   draft: boolean;
+  publishDate: string;
 };

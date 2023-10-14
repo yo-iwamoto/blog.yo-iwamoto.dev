@@ -48,14 +48,7 @@ export default async function Page({ params: { slug } }: { params: PageParams })
   if (post === undefined) {
     notFound();
   }
-  const {
-    title,
-    _sys: {
-      raw: { firstPublishedAt },
-    },
-    body,
-    tags,
-  } = post;
+  const { title, publishDate, body, tags } = post;
 
   return (
     <div className='px-4 py-10'>
@@ -68,7 +61,7 @@ export default async function Page({ params: { slug } }: { params: PageParams })
           <div className='mb-12'>
             <h1 className='mb-4 text-2xl font-bold md:text-3xl xl:text-4xl'>{title}</h1>
             <div className='flex items-center gap-2'>
-              <time dateTime={firstPublishedAt}>{formatDate(firstPublishedAt)}</time>
+              <time dateTime={publishDate}>{formatDate(publishDate)}</time>
               <span className='flex gap-2'>
                 {tags.map((tag) => (
                   <Link

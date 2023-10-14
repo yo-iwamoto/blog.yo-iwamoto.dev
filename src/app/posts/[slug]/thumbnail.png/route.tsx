@@ -4,6 +4,8 @@ import { mockPosts } from '@/lib/mock';
 import { ImageResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
+export const revalidate = 86400;
+
 type Parameter = {
   params: {
     slug: string;

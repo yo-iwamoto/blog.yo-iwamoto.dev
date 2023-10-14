@@ -1,9 +1,7 @@
 module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
-    extend: {
-      colors: {},
-    },
+    extend: {},
   },
   plugins: [require('@tailwindcss/typography')],
 };

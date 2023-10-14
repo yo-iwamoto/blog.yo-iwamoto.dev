@@ -1,8 +1,8 @@
-import { cn } from '@/lib/cn';
 import { formatDate } from '@/lib/formatDate';
 import { BreadCrumb } from '@/components/BreadCrumb';
 import { env } from '@/lib/env';
 import { getPosts } from '@/data-access/getPosts';
+import { PostBody } from '@/components/PostBody';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -76,14 +76,7 @@ export default async function Page({ params: { slug } }: { params: PageParams })
             </div>
           </div>
 
-          <div
-            className={cn(
-              'prose-code:unset prose prose-sm mx-auto md:prose-lg prose-code:font-normal prose-code:before:hidden prose-code:after:hidden',
-              'prose-h1:text-xl prose-pre:p-2 prose-pre:text-sm md:prose-h1:text-3xl md:prose-pre:text-base',
-              'mb-20'
-            )}
-            dangerouslySetInnerHTML={{ __html: body }}
-          />
+          <PostBody body={body} />
         </article>
 
         <footer className='mx-auto max-w-[735px]'>

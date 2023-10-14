@@ -17,6 +17,7 @@ export default async function Page() {
   return (
     <nav className='px-4 py-16'>
       <div className='mx-auto max-w-[735px]'>
+        <h1 className='mb-4 text-2xl font-bold md:text-3xl xl:text-4xl'>これまでのエントリ</h1>
         <ul>
           {allPosts
             .filter((post) => !post.draft)

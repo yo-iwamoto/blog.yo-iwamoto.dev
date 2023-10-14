@@ -1,7 +1,7 @@
-import { allPosts } from 'contentlayer/generated';
 import { cn } from '@/lib/cn';
 import { formatDate } from '@/lib/formatDate';
 import { BreadCrumb } from '@/components/BreadCrumb';
+import { mockPosts } from '@/lib/mock';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -10,12 +10,6 @@ type PageParams = {
   name: string;
 };
 
-export function generateStaticParams() {
-  const tags = Array.from(new Set(allPosts.flatMap((post) => post.tags)));
-
-  return tags.map((name) => ({ name })) satisfies PageParams[];
-}
-
 export function generateMetadata({ params: { name } }: { params: PageParams }) {
   return {
     title: `#${name} のエントリ`,
@@ -23,7 +17,7 @@ export function generateMetadata({ params: { name } }: { params: PageParams }) {
 }
 
 export default function Page({ params: { name } }: { params: PageParams }) {
-  const posts = allPosts.filter((posts) => posts.tags.includes(name));
+  const posts = mockPosts;
   if (posts.length === 0) {
     notFound();
   }

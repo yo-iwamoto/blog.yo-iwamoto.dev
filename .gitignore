@@ -6,5 +6,4 @@ public/*.js
 public/*.map
 .env
 cypress/screenshots
-.contentlayer
 .vercel

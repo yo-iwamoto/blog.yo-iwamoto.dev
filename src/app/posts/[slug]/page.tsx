@@ -1,10 +1,9 @@
 import classNames from '@/styles/modules/mdxContent.module.scss';
-import { PostBody } from '@/components/client/PostBody';
-import { allPosts } from 'contentlayer/generated';
 import { cn } from '@/lib/cn';
 import { formatDate } from '@/lib/formatDate';
 import { BreadCrumb } from '@/components/BreadCrumb';
 import { env } from '@/lib/env';
+import { mockPosts } from '@/lib/mock';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -14,7 +13,7 @@ type PageParams = {
 };
 
 export function generateStaticParams() {
-  return allPosts
+  return mockPosts
     .filter((post) => !post.draft)
     .map((post) => ({
       slug: post._id,
@@ -22,7 +21,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params: { slug } }: { params: PageParams }) {
-  const post = allPosts.find((post) => post.slug === slug);
+  const post = mockPosts.find((post) => post.slug === slug);
   if (post === undefined) return null;
 
   return {
@@ -42,17 +41,11 @@ export function generateMetadata({ params: { slug } }: { params: PageParams }) {
 }
 
 export default function Page({ params: { slug } }: { params: PageParams }) {
-  const post = allPosts.find((post) => post.slug === slug);
+  const post = mockPosts.find((post) => post.slug === slug);
   if (post === undefined) {
     notFound();
   }
-  const {
-    title,
-    postedAt,
-    body: { code },
-    url,
-    tags,
-  } = post;
+  const { title, postedAt, body, url, tags } = post;
 
   return (
     <div className='px-4 py-10'>
@@ -84,7 +77,7 @@ export default function Page({ params: { slug } }: { params: PageParams }) {
               classNames.content
             )}
           >
-            <PostBody code={code} />
+            <div dangerouslySetInnerHTML={{ __html: body }} />
           </div>
         </article>
 

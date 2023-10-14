@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 
-import { allPosts } from 'contentlayer/generated';
+import { mockPosts } from '@/lib/mock';
 import { ImageResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
@@ -11,7 +11,7 @@ type Parameter = {
 };
 
 export const GET = async (_: NextRequest, { params: { slug } }: Parameter) => {
-  const title = allPosts.find((p) => p.slug === slug)?.title;
+  const title = mockPosts.find((p) => p.slug === slug)?.title;
 
   return new ImageResponse(
     (

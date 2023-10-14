@@ -1,6 +1,6 @@
 import { cn } from '@/lib/cn';
 import { formatDate } from '@/lib/formatDate';
-import { allPosts } from 'contentlayer/generated';
+import { mockPosts } from '@/lib/mock';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -9,6 +9,8 @@ export const metadata = {
 } satisfies Metadata;
 
 export default function Page() {
+  const allPosts = mockPosts;
+
   return (
     <nav className='px-4 py-16'>
       <div className='mx-auto max-w-[735px]'>

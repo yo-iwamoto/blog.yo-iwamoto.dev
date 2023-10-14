@@ -1,12 +1,7 @@
-const { withContentlayer } = require('next-contentlayer');
-
-module.exports = withContentlayer({
+/** @type{import('next').NextConfig} */
+module.exports = {
   swcMinify: true,
-  output: 'standalone',
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    appDir: true,
-  },
-});
+}

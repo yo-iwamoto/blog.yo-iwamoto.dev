@@ -1,16 +1,18 @@
 import { EntryCard } from '@/components/EntryCard';
-import { mockPosts } from '@/lib/mock';
+import { getPosts } from '@/data-access/getPosts';
+import { env } from '@/lib/env';
 import { Fragment } from 'react';
 import type { Metadata } from 'next';
 
 export const revalidate = 86400;
 
 export const metadata = {
+  metadataBase: new URL(env.WEBSITE_URL),
   title: 'blog.yoiw.dev',
 } satisfies Metadata;
 
-export default function Page() {
-  const allPosts = mockPosts;
+export default async function Page() {
+  const allPosts = await getPosts();
 
   return (
     <nav className='px-4 py-16'>

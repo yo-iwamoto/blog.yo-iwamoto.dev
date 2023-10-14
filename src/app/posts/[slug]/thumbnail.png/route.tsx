@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 
-import { mockPosts } from '@/lib/mock';
+import { getPosts } from '@/data-access/getPosts';
 import { ImageResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
@@ -13,14 +13,14 @@ type Parameter = {
 };
 
 export const GET = async (_: NextRequest, { params: { slug } }: Parameter) => {
-  const title = mockPosts.find((p) => p.slug === slug)?.title;
+  const title = (await getPosts()).find((p) => p.slug === slug)?.title;
 
   return new ImageResponse(
     (
-      <div tw='bg-black flex w-full h-full justify-center items-center'>
-        <div tw='p-12 w-4/5 h-[60%] bg-[#090909] rounded-2xl shadow-lg shadow-gray-400 flex flex-col justify-between text-white'>
-          <p tw='text-6xl'>{title}</p>
-          <p tw='text-2xl flex justify-end'>blog.yoiw.dev</p>
+      <div tw='bg-neutral-200 flex w-full p-12 h-full justify-center items-center'>
+        <div tw='p-12 h-full bg-white rounded-2xl shadow-lg shadow-neutral-400 flex flex-col justify-between text-white'>
+          <p tw='text-6xl text-neutral-800'>{title}</p>
+          <p tw='text-3xl text-neutral-800 flex justify-end'>blog.yoiw.dev</p>
         </div>
       </div>
     )

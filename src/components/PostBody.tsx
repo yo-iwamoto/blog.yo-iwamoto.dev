@@ -10,7 +10,8 @@ type Props = {
 };
 
 export function PostBody({ body }: Props) {
-  useHighlight();
+  useHighlightEffect();
+  useAssignIdForHeadingsEffect();
 
   return (
     <div
@@ -24,7 +25,7 @@ export function PostBody({ body }: Props) {
   );
 }
 
-function useHighlight() {
+function useHighlightEffect() {
   async function registerLanguagesSync() {
     await Promise.all([
       import('highlight.js/lib/languages/typescript'),
@@ -43,5 +44,16 @@ function useHighlight() {
     registerLanguagesSync().then(() => {
       hljs.highlightAll();
     });
+  }, []);
+}
+
+function useAssignIdForHeadingsEffect() {
+  useEffect(() => {
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+    for (const heading of headings) {
+      const id = heading.textContent?.toLowerCase().replace(/\s/g, '-');
+      heading.id = id!;
+    }
   }, []);
 }

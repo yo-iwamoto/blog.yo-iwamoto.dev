@@ -4,7 +4,13 @@ import { getPosts } from '@/data-access/getPosts';
 import { ImageResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export const revalidate = 86400;
+export async function generateStaticParams() {
+  return (await getPosts())
+    .filter((post) => !post.draft)
+    .map((post) => ({
+      slug: post._id,
+    }));
+}
 
 type Parameter = {
   params: {

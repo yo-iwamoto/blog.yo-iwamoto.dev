@@ -14,7 +14,7 @@ export const BreadCrumb = ({ nodes }: Props) => {
   const pathname = usePathname();
 
   return (
-    <ol className='flex items-center overflow-scroll'>
+    <ol className='flex items-center overflow-auto'>
       {[{ title: 'Home', url: '/' }, ...nodes].map((node, i) => {
         const current = pathname === node.url;
 

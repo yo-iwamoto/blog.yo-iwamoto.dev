@@ -17,7 +17,7 @@ export function PostBody({ body }: Props) {
       className={cn(
         'prose-code:unset prose prose-sm mx-auto md:prose-lg prose-code:font-normal prose-code:before:hidden prose-code:after:hidden',
         'prose-h1:text-xl prose-pre:p-2 prose-pre:text-sm md:prose-h1:text-3xl md:prose-pre:text-base',
-        'mb-20'
+        'mb-20 !max-w-none'
       )}
       dangerouslySetInnerHTML={{ __html: body }}
     />
@@ -27,14 +27,11 @@ export function PostBody({ body }: Props) {
 function useHighlight() {
   async function registerLanguagesSync() {
     await Promise.all([
-      import('highlight.js/lib/languages/javascript'),
       import('highlight.js/lib/languages/typescript'),
       import('highlight.js/lib/languages/bash'),
       import('highlight.js/lib/languages/yaml'),
       import('highlight.js/lib/languages/json'),
-    ]).then(([javascript, typescript, bash, yaml, json]) => {
-      console.log({ javascript, typescript, bash, yaml, json });
-      hljs.registerLanguage('javascript', javascript.default);
+    ]).then(([typescript, bash, yaml, json]) => {
       hljs.registerLanguage('typescript', typescript.default);
       hljs.registerLanguage('bash', bash.default);
       hljs.registerLanguage('yaml', yaml.default);

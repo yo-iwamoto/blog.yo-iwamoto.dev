@@ -6,3 +6,9 @@ export const newtClient = createClient({
   token: env.NEWT_CDN_API_TOKEN,
   spaceUid: 'yoiw-personal',
 });
+
+export const newtAdmin = createClient({
+  apiType: 'api',
+  token: env.NEWT_API_TOKEN,
+  spaceUid: 'yoiw-personal',
+});

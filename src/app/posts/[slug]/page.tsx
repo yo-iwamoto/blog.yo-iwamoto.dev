@@ -37,7 +37,7 @@ export async function generateMetadata({ params: { slug } }: { params: PageParam
       siteName: 'blog.yoiw.dev',
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: `${post.title} | blog.yoiw.dev`,
     },
   } satisfies Metadata;

@@ -4,7 +4,6 @@ const { withContentlayer } = require('next-contentlayer');
 const nextConfig = {
   experimental: {
     turbo: true,
-    serverActions: true,
   },
   eslint: {
     ignoreDuringBuilds: true,

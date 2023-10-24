@@ -1,10 +1,8 @@
 import { PostBody } from './_components/PostBody';
-import { FavButton } from './_components/FavButton';
 import { getPost } from '@/repo/getPost';
 import { Text } from '@/components/Text';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 export { generateMetadata } from './generateMetadata';
 export { generateStaticParams } from './generateStaticParams';
@@ -15,7 +13,7 @@ type PageProps = {
   };
 };
 
-export default async function Page({ params: { slug } }: PageProps) {
+export default function Page({ params: { slug } }: PageProps) {
   const post = getPost(slug);
   if (post === undefined) {
     notFound();
@@ -27,7 +25,7 @@ export default async function Page({ params: { slug } }: PageProps) {
         {post.title}
       </Text>
 
-      <div className='flex h-14 items-center gap-4'>
+      <div className='flex items-end gap-4'>
         <Text className='text-sm'>
           {new Date(post.postedAt).toISOString().split('T')[0]}
         </Text>
@@ -48,9 +46,6 @@ export default async function Page({ params: { slug } }: PageProps) {
             </Link>
           ))}
         </div>
-        <Suspense>
-          <FavButton slug={slug} />
-        </Suspense>
       </div>
 
       <PostBody code={post.body.code} />

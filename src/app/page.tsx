@@ -7,7 +7,7 @@ export default function Page() {
 
   return (
     <main className='mt-8 grid gap-4'>
-      <Text className='text-xl'>最近のエントリ</Text>
+      <Text className='px-2 text-xl'>最近のエントリ</Text>
 
       <PostCardList posts={posts} />
     </main>

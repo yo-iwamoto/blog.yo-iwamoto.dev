@@ -4,6 +4,8 @@ import { Text } from '@/components/Text';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
+export { generateStaticParams } from './generateStaticParams';
+
 type PageProps = {
   params: {
     slug: string;
@@ -12,7 +14,7 @@ type PageProps = {
 
 export default function Page({ params: { slug } }: PageProps) {
   const post = getPost(slug);
-  if (post === null) {
+  if (post === undefined) {
     notFound();
   }
 

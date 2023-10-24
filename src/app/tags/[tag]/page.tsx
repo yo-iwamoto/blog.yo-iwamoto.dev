@@ -3,6 +3,8 @@ import { Text } from '@/components/Text';
 import { getLatest10PostsByTags } from '@/repo/getLatest10PostsByTags';
 import { notFound } from 'next/navigation';
 
+export { generateStaticParams } from './generateStaticParams';
+
 type PageProps = {
   params: {
     tag: string;

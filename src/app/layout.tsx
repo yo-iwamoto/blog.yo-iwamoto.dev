@@ -1,7 +1,7 @@
 import { Header } from './_components/Header';
 import { SizedContainer } from '@/components/SizedContainer';
 import type { PropsWithChildren } from 'react';
-import '@/styles/global.css';
+import '@/styles/global.scss';
 
 export const metadata = {
   title: 'blog.yoiw.dev',

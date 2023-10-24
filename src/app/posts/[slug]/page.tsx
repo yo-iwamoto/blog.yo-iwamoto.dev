@@ -1,3 +1,4 @@
+import { PostBody } from './_components/PostBody';
 import { getPost } from '@/repo/getPost';
 import { Text } from '@/components/Text';
 import { notFound } from 'next/navigation';
@@ -16,7 +17,7 @@ export default function Page({ params: { slug } }: PageProps) {
   }
 
   return (
-    <main className='mt-8 grid gap-2'>
+    <main className='my-8 grid gap-2'>
       <Text className='text-2xl font-bold md:text-3xl lg:text-4xl'>
         {post.title}
       </Text>
@@ -43,6 +44,8 @@ export default function Page({ params: { slug } }: PageProps) {
           ))}
         </div>
       </div>
+
+      <PostBody code={post.body.code} />
     </main>
   );
 }

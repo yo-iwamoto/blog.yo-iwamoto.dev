@@ -7,7 +7,7 @@ export const metadata = {
   description: "yoiwamoto's tech blog.",
   keywords: ['tech', 'blog', 'yoiwamoto'],
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     creator: '@yoiwamoto',
   },
   robots: {

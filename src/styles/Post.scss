@@ -10,6 +10,10 @@
     }
   }
 
+  a {
+    @apply focus-within:rounded-md focus-within:ring-2 focus-within:ring-neutral-500 focus-within:ring-offset-2 focus:outline-none;
+  }
+
   :not(pre) > code {
     @apply rounded-md bg-gray-200 p-1 px-1.5 text-[#2d3748] before:hidden after:hidden;
   }
@@ -19,7 +23,7 @@
   }
 
   pre {
-    @apply p-0;
+    @apply max-w-[calc(100vw_-_2rem)] p-0;
     ::selection {
       @apply bg-[#b3d4fc] text-white;
     }

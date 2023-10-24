@@ -1,4 +1,3 @@
-import { env } from '@/config/env';
 import { getPost } from '@/repo/getPost';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -16,7 +15,11 @@ export function generateMetadata({ params: { slug } }: PageProps) {
   }
 
   return {
-    metadataBase: new URL(env.WEBSITE_URL),
     title: `${post.title} | blog.yoiw.dev`,
+    keywords: post.tags,
+    twitter: {
+      card: 'summary_large_image',
+      creator: '@yoiwamoto',
+    },
   } satisfies Metadata;
 }

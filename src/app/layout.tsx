@@ -3,10 +3,7 @@ import { SizedContainer } from '@/components/SizedContainer';
 import type { PropsWithChildren } from 'react';
 import '@/styles/global.scss';
 
-export const metadata = {
-  title: 'blog.yoiw.dev',
-  description: "yoiwamoto's tech blog.",
-};
+export { metadata } from './metadata';
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (

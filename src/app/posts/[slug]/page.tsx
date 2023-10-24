@@ -4,6 +4,7 @@ import { Text } from '@/components/Text';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
+export { generateMetadata } from './generateMetadata';
 export { generateStaticParams } from './generateStaticParams';
 
 type PageProps = {

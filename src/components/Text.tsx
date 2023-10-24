@@ -2,19 +2,21 @@ import { cn } from '@/lib/utils';
 import type { PropsWithChildren } from 'react';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
-type Props<T extends ElementType = 'div'> = {
+type Props<T extends ElementType> = {
   as?: T;
-} & ComponentPropsWithoutRef<T>;
+} & Omit<ComponentPropsWithoutRef<T>, 'as'>;
 
-export function Text({
-  as: As = 'div',
+export function Text<T extends ElementType = 'div'>({
+  as,
   children,
   className,
   ...props
-}: PropsWithChildren<Props>) {
+}: PropsWithChildren<Props<T>>) {
+  const As = as ?? 'div';
+
   return (
     <As
-      className={cn('text-neutral-700 dark:text-neutral-100', className)}
+      className={cn('text-neutral-700 dark:text-neutral-200', className)}
       {...props}
     >
       {children}

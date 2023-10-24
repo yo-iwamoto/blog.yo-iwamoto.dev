@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { PropsWithChildren } from 'react';
@@ -16,7 +17,10 @@ export function HeaderNavLink({ href, children }: Props) {
     <Link
       href={href}
       aria-current={isCurrent ? 'page' : undefined}
-      className='py-2 text-lg text-neutral-700 underline-offset-4 hover:underline dark:text-neutral-100'
+      className={cn(
+        'rounded-md py-1 text-lg text-neutral-700 underline-offset-4 hover:underline dark:text-neutral-100',
+        'focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2',
+      )}
     >
       {children}
     </Link>

@@ -1,36 +1,15 @@
-import { EntryCard } from '@/components/EntryCard';
-import { getPosts } from '@/data-access/getPosts';
-import { env } from '@/lib/env';
-import { Fragment } from 'react';
-import type { Metadata } from 'next';
+import { PostCardList } from '@/components/PostCardList';
+import { Text } from '@/components/Text';
+import { getLatest10Posts } from '@/repo/getLatest10Posts';
 
-export const revalidate = 86400;
-
-export const metadata = {
-  metadataBase: new URL(env.WEBSITE_URL),
-  title: 'blog.yoiw.dev',
-} satisfies Metadata;
-
-export default async function Page() {
-  const allPosts = await getPosts();
+export default function Page() {
+  const posts = getLatest10Posts();
 
   return (
-    <nav className='px-4 py-16'>
-      <div className='mx-auto max-w-[735px]'>
-        <h1 className='mb-4 text-2xl font-bold md:text-3xl xl:text-4xl'>これまでのエントリ</h1>
-        <ul>
-          {allPosts
-            .filter((post) => !post.draft)
-            .map((post, i) => (
-              <Fragment key={post._id}>
-                <li>
-                  <EntryCard post={post} />
-                </li>
-                {i !== allPosts.length - 1 && <hr />}
-              </Fragment>
-            ))}
-        </ul>
-      </div>
-    </nav>
+    <main className='mt-8 grid gap-4'>
+      <Text className='px-2 text-xl'>最近のエントリ</Text>
+
+      <PostCardList posts={posts} />
+    </main>
   );
 }

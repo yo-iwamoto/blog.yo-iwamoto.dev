@@ -1,20 +1,17 @@
-import '@/styles/global.css';
-import Link from 'next/link';
+import { Header } from './_components/Header';
+import { SizedContainer } from '@/components/SizedContainer';
+import type { PropsWithChildren } from 'react';
+import '@/styles/global.scss';
 
-export const revalidate = 86400;
+export { metadata } from './metadata';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang='ja'>
-      <body className='bg-stone-50'>
-        <header className='px-4'>
-          <div className='mx-auto max-w-[735px] py-5'>
-            <Link href='/' className='font-mono text-xl font-bold'>
-              blog.yoiw.dev
-            </Link>
-          </div>
-        </header>
-        <main className='min-h-screen'>{children}</main>
+      <body className='min-h-screen bg-neutral-100 dark:bg-neutral-900'>
+        <Header />
+
+        <SizedContainer>{children}</SizedContainer>
       </body>
     </html>
   );

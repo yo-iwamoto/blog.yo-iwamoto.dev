@@ -1,3 +1,4 @@
+import { excludeDraft } from './common';
 import { allPosts } from 'contentlayer/generated';
 import type { Post } from 'contentlayer/generated';
 
@@ -5,10 +6,6 @@ export function getLatest10PostsByTags(tag: string): Post[] {
   return pickLatest10(
     sortByPostedAt(filterByTags(excludeDraft(allPosts), tag)),
   );
-}
-
-function excludeDraft<T extends { draft: boolean }>(arr: T[]) {
-  return arr.filter((post) => post.draft !== true);
 }
 
 function filterByTags<T extends { tags: string[] }>(arr: T[], tag: string) {

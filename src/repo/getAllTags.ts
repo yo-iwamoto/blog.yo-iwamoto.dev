@@ -1,11 +1,8 @@
+import { excludeDraft } from './common';
 import { allPosts } from 'contentlayer/generated';
 
 export function getAllTags(): { name: string; count: number }[] {
   return sortByCount(countEach(extractTags(excludeDraft(allPosts))));
-}
-
-function excludeDraft<T extends { draft: boolean }>(arr: T[]) {
-  return arr.filter((post) => post.draft !== true);
 }
 
 function extractTags<T extends { tags: string[] }>(arr: T[]) {

@@ -6,7 +6,7 @@
   h5,
   h6 {
     > a {
-      @apply no-underline hover:text-gray-500;
+      @apply font-bold no-underline hover:text-gray-500;
     }
   }
 
@@ -15,17 +15,21 @@
   }
 
   :not(pre) > code {
-    @apply rounded-md bg-gray-200 p-1 px-1.5 text-[#2d3748] before:hidden after:hidden;
+    @apply rounded-md bg-gray-200 p-1 px-1.5 font-normal text-[#2d3748] before:hidden after:hidden;
   }
 
   ::selection {
     @apply bg-[#0C344B] text-[#e7e9ea];
   }
 
+  .rehype-code-title {
+    @apply rounded-md bg-neutral-200 px-2 py-1 text-sm;
+  }
+
   pre {
-    @apply max-w-[calc(100vw_-_2rem)] p-0;
+    @apply mt-2 max-w-[calc(100vw_-_2rem)] p-0;
     ::selection {
-      @apply bg-[#b3d4fc] text-white;
+      @apply rounded-none bg-[#b3d4fc] text-white;
     }
     code {
       @apply max-w-full overflow-x-auto;

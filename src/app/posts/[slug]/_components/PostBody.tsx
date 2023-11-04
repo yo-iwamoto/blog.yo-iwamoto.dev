@@ -13,7 +13,7 @@ export function PostBody({ code }: Props) {
   useHighlightEffect();
 
   return (
-    <div className='prose postBody max-w-none'>
+    <div className='postBody prose max-w-none'>
       <Content />
     </div>
   );

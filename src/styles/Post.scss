@@ -10,7 +10,8 @@
     }
   }
   p,
-  strong {
+  strong,
+  a {
     @apply dark:text-neutral-300;
   }
 

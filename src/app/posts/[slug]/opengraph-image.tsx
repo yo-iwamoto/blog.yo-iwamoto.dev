@@ -3,6 +3,8 @@ import { getPost } from '@/repo/getPost';
 import { notFound } from 'next/navigation';
 import { ImageResponse } from 'next/server';
 
+export { generateStaticParams } from './generateStaticParams';
+
 export const runtime = 'edge';
 
 type PageProps = {

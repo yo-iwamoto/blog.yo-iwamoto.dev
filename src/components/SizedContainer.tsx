@@ -8,6 +8,6 @@ type Props = PropsWithChildren<{
 
 export function SizedContainer({ as: As = 'div', children, className }: Props) {
   return (
-    <As className={cn('mx-auto max-w-5xl px-4', className)}>{children}</As>
+    <As className={cn('mx-auto max-w-4xl px-4', className)}>{children}</As>
   );
 }

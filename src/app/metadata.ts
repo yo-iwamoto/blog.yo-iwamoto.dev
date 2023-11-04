@@ -6,6 +6,10 @@ export const metadata = {
   title: `blog.yoiw.dev`,
   description: "yoiwamoto's tech blog.",
   keywords: ['tech', 'blog', 'yoiwamoto'],
+  openGraph: {
+    type: 'article',
+    siteName: `blog.yoiw.dev`,
+  },
   twitter: {
     card: 'summary',
     creator: '@yoiwamoto',

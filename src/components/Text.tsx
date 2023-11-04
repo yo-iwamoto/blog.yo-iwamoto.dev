@@ -16,7 +16,7 @@ export function Text<T extends ElementType = 'div'>({
 
   return (
     <As
-      className={cn('text-neutral-700 dark:text-neutral-200', className)}
+      className={cn('text-neutral-700 dark:text-neutral-300', className)}
       {...props}
     >
       {children}

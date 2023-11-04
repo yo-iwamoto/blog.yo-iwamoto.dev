@@ -6,8 +6,11 @@
   h5,
   h6 {
     > a {
-      @apply font-bold no-underline hover:text-gray-500;
+      @apply font-bold no-underline hover:text-gray-500 dark:text-neutral-300;
     }
+  }
+  p {
+    @apply dark:text-neutral-300;
   }
 
   a {
@@ -15,15 +18,15 @@
   }
 
   :not(pre) > code {
-    @apply rounded-md bg-gray-200 p-1 px-1.5 font-normal text-[#2d3748] before:hidden after:hidden;
+    @apply rounded-md bg-gray-200 p-1 px-1.5 font-normal text-[#2d3748] before:hidden after:hidden dark:bg-gray-600 dark:text-neutral-200;
   }
 
   ::selection {
-    @apply bg-[#0C344B] text-[#e7e9ea];
+    @apply bg-[#0C344B] text-[#e7e9ea] dark:bg-neutral-400;
   }
 
   .rehype-code-title {
-    @apply rounded-md bg-neutral-200 px-2 py-1 text-sm;
+    @apply rounded-md bg-neutral-200 px-2 py-1 text-sm dark:bg-neutral-400;
   }
 
   pre {

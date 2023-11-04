@@ -35,19 +35,51 @@ Vitest（Jest でも同じようですが）では、モックのリセットに
 
 ### 振る舞いの変更が他の suite に影響するケース
 
-先ほどの useUserProfile のモックの件で `restoreMocks` が有効でなかった場合、今は直列で上から実行されているので気付けませんが、例えば以下のような suite を追加したとします。
+以下のようなテストコードを想定します。  
+別記事からの使い回しなので若干例として冗長ですが、ご了承ください。
 
 ```tsx:user-profile.test.tsx
-it('ユーザーページへのリンクが表示されること', () => {
-  const { getByRole } = render(<UserProfile />);
-  expect(getByRole('link', { name: 'John Doe' })).toBeInTheDocument();
+import { render } from '@testing-library/react';
+import { UserProfile } from './user-profile';
+
+const { useUserQuery } = vi.hoisted(() => ({
+  useUserQuery: vi.fn(() => ({
+    data: { name: 'John Doe' },
+  })),
+}));
+vi.mock('./use-user-query', () => ({
+  useUserQuery,
+}));
+
+describe('UserProfile', () => {
+  it('ユーザー名が表示されること', () => {
+    const { getByText } = render(<UserProfile />);
+    expect(getByText('John Doe')).toBeInTheDocument();
+  });
+
+  it('データが取得中の時、ローディング UI が表示されること', () => {
+    // モック関数の返り値を変更する
+    useUserQuery.mockReturnValue({
+      data: undefined,
+    });
+
+    const { getByText } = render(<UserProfile />);
+    expect(getByText('Loading...')).toBeInTheDocument();
+  });
+
+  it('ユーザーページへのリンクが表示されること', () => {
+    const { getByRole } = render(<UserProfile />);
+    expect(getByRole('link', { name: 'John Doe' })).toBeInTheDocument();
+  })
 });
 ```
 
-この suite は、useUserQuery が最初にモックされたままの実装であることを期待していますが、直前の suite 内の以下の箇所で `{ data: undefined }` を返す状態になってしまったままなので、リンクが表示されず fail します。
+上記の `'ユーザーページへのリンクが表示されること'` の suite は、useUserQuery が最初にモックされたままの実装であることを期待していますが、直前の suite 内の以下の箇所で `{ data: undefined }` を返す状態になってしまったままなので、リンクが表示されず fail します。
 
 ```ts
-useUserQuery.mockReturnValue({ data: undefined });
+useUserQuery.mockReturnValue({
+  data: undefined,
+});
 ```
 
 `restoreMocks` が有効である場合、`mockReturnValue()` によって加えられたモック関数への変更は、すべて初めに `vi.fn()` に渡した implementation に restore されるため、このような問題は起きません。

@@ -10,10 +10,6 @@ export const metadata = {
     type: 'article',
     siteName: `blog.yoiw.dev`,
   },
-  twitter: {
-    card: 'summary',
-    creator: '@yoiwamoto',
-  },
   robots: {
     follow: true,
     index: true,

@@ -17,9 +17,5 @@ export function generateMetadata({ params: { slug } }: PageProps) {
   return {
     title: `${post.title} | blog.yoiw.dev`,
     keywords: post.tags,
-    twitter: {
-      card: 'summary_large_image',
-      creator: '@yoiwamoto',
-    },
   } satisfies Metadata;
 }

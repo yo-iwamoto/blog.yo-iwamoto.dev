@@ -6,7 +6,7 @@ exports[`Layout > snapshot unchanged 1`] = `
     class="flex bg-neutral-50 dark:bg-neutral-900 flex-col h-screen overflow-auto"
   >
     <header
-      class="bg-white/70 dark:bg-white/5 backdrop-blur-sm sticky top-0"
+      class="bg-white/70 dark:bg-white/5 backdrop-blur-sm sticky top-0 z-10"
     >
       <div
         class="max-w-4xl mx-auto px-4 lg:px-0 py-1 flex justify-between items-center"

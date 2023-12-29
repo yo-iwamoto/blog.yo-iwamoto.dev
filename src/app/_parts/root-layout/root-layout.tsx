@@ -13,7 +13,7 @@ export function RootLayoutRoot({ children }: PropsWithChildren) {
 
 export function RootLayoutHeader() {
   return (
-    <header className="bg-white/70 dark:bg-white/5 backdrop-blur-sm sticky top-0">
+    <header className="bg-white/70 dark:bg-white/5 backdrop-blur-sm sticky top-0 z-10">
       <SizedBox className="py-1 flex justify-between items-center">
         <Link
           href="/"

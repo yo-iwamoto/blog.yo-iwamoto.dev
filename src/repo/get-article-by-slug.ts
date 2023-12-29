@@ -3,18 +3,9 @@ import { cdnClient } from "./client";
 import type { Content } from "./client";
 import { transformArticleHtml } from "@/lib/transform-article-html";
 import { cache } from "react";
+import { Article } from "@/model/article";
 
 const articleModelUid = "article";
-
-class Article {
-  constructor(
-    public title: string,
-    public slug: string,
-    public tags: { name: string; slug: string }[],
-    public publishedAt: Date,
-    public body: string,
-  ) {}
-}
 
 async function getArticleBySlugFn(slug: string): Promise<Article | null> {
   const res = await cdnClient.getFirstContent<

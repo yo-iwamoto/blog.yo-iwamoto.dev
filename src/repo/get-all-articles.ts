@@ -2,19 +2,11 @@ import { env } from "@/config/env";
 import { cdnClient } from "./client";
 import type { Content } from "./client";
 import { cache } from "react";
+import { ArticleListItem } from "@/model/article-list-item";
 
 const articleModelUid = "article";
 
-class ArticleItem {
-  constructor(
-    public title: string,
-    public slug: string,
-    public tags: { name: string; slug: string }[],
-    public publishedAt: Date,
-  ) {}
-}
-
-async function getAllArticlesFn(): Promise<ArticleItem[]> {
+async function getAllArticlesFn(): Promise<ArticleListItem[]> {
   const res = await cdnClient.getContents<
     {
       title: string;
@@ -32,7 +24,7 @@ async function getAllArticlesFn(): Promise<ArticleItem[]> {
 
   const articles = res.items.map(
     (item) =>
-      new ArticleItem(
+      new ArticleListItem(
         item.title,
         item.slug,
         item.tags,

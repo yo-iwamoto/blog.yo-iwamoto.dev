@@ -20,7 +20,7 @@ function PostCardListCard({
   return (
     <li>
       <Link
-        href={`/articles/${slug}`}
+        href={`/posts/${slug}`}
         className={cn(
           "group grid gap-2 rounded-md p-3 hover:bg-neutral-200 dark:hover:bg-neutral-800",
           "focus-within:bg-neutral-200 focus-within:ring-2 focus-within:ring-neutral-500 focus-within:ring-offset-2 focus:outline-none dark:focus-within:bg-neutral-800",

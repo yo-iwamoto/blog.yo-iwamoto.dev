@@ -1,6 +1,7 @@
 import { getArticleBySlug } from "@/repo/get-article-by-slug";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { extractTextFromArticleHtml } from "@/lib/extract-text-from-article-html";
 
 type Props = {
   params: {
@@ -14,8 +15,13 @@ export async function generateMetadata({ params: { slug } }: Props) {
     notFound();
   }
 
+  const bodyTextFirst100Letters = extractTextFromArticleHtml(
+    article.body,
+  ).slice(0, 100);
+
   return {
     title: `${article.title} | blog.yoiw.dev`,
+    description: `${bodyTextFirst100Letters}...`,
     keywords: article.tags.map((tag) => tag.name),
   } satisfies Metadata;
 }

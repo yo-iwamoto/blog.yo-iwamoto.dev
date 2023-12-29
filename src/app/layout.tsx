@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 import { RootLayout } from "./_parts/root-layout";
-import "@/styles/global.scss";
 import { env } from "@/config/env";
+import "@/styles/global.scss";
 
 export const metadata = {
   title: "blog.yoiw.dev",
@@ -12,7 +12,11 @@ export const metadata = {
   openGraph: {
     type: "article",
     siteName: "blog.yoiw.dev",
-    images: "/opengraph-image.jpg",
+    images: {
+      url: "/opengraph-image.jpg",
+      height: 100,
+      width: 100,
+    },
   },
   twitter: {
     card: "summary",

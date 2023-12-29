@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 
 export { generateStaticParams } from "./generate-static-params";
 
+export const dynamic = "force-static";
+
 type PageProps = {
   params: {
     slug: string;

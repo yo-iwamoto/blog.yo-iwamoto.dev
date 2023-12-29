@@ -2,6 +2,8 @@ import { Link } from "@/components/link";
 import { Text } from "@/components/text";
 import { getAllTags } from "@/repo/get-all-tags";
 
+export const dynamic = "force-static";
+
 export default async function Page() {
   const tags = await getAllTags();
 

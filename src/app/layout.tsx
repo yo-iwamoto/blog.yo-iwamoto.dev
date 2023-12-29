@@ -20,10 +20,14 @@ export const metadata = {
   },
   twitter: {
     card: "summary",
+    images: [],
   },
   robots: {
     follow: true,
     index: true,
+  },
+  alternates: {
+    canonical: "/",
   },
 } satisfies Metadata;
 

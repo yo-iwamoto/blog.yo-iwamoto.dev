@@ -1,6 +1,14 @@
 import { Link } from "@/components/link";
 import { Text } from "@/components/text";
 import { getAllTags } from "@/repo/get-all-tags";
+import { Metadata } from "next";
+
+export const metadata = {
+  title: "Tags | blog.yoiw.dev",
+  alternates: {
+    canonical: "/tags/",
+  },
+} satisfies Metadata;
 
 export const dynamic = "force-static";
 

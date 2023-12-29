@@ -23,5 +23,8 @@ export async function generateMetadata({ params: { slug } }: Props) {
     title: `${article.title} | blog.yoiw.dev`,
     description: `${bodyTextFirst100Letters}...`,
     keywords: article.tags.map((tag) => tag.name),
+    alternates: {
+      canonical: `/posts/${article.slug}/`,
+    },
   } satisfies Metadata;
 }

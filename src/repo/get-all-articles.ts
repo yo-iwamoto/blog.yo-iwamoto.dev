@@ -1,6 +1,7 @@
 import { env } from "@/config/env";
 import { cdnClient } from "./client";
 import type { Content } from "./client";
+import { cache } from "react";
 
 const articleModelUid = "article";
 
@@ -13,7 +14,7 @@ class ArticleItem {
   ) {}
 }
 
-export async function getAllArticles(): Promise<ArticleItem[]> {
+async function getAllArticlesFn(): Promise<ArticleItem[]> {
   const res = await cdnClient.getContents<
     {
       title: string;
@@ -41,3 +42,5 @@ export async function getAllArticles(): Promise<ArticleItem[]> {
 
   return articles;
 }
+
+export const getAllArticles = cache(getAllArticlesFn);

@@ -2,6 +2,7 @@ import { env } from "@/config/env";
 import { cdnClient } from "./client";
 import type { Content } from "./client";
 import { transformArticleHtml } from "@/lib/transform-article-html";
+import { cache } from "react";
 
 const articleModelUid = "article";
 
@@ -15,7 +16,7 @@ class Article {
   ) {}
 }
 
-export async function getArticleBySlug(slug: string): Promise<Article | null> {
+async function getArticleBySlugFn(slug: string): Promise<Article | null> {
   const res = await cdnClient.getFirstContent<
     {
       title: string;
@@ -42,3 +43,5 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
 
   return article;
 }
+
+export const getArticleBySlug = cache(getArticleBySlugFn);

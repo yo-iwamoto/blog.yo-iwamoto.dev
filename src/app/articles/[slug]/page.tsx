@@ -5,6 +5,9 @@ import { PostBody } from "./_parts/post-body";
 import { getArticleBySlug } from "@/repo/get-article-by-slug";
 import "@/styles/post-body.scss";
 
+export { generateMetadata } from "./generate-metadata";
+export { generateStaticParams } from "./generate-static-params";
+
 export const dynamic = "force-static";
 
 type Props = {

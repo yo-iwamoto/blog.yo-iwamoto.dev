@@ -20,13 +20,12 @@ const baseConfig = defineConfig({
 });
 
 export default defineWorkspace([
-  "packages/*",
   mergeConfig(baseConfig, {
     plugins: [react()],
     test: {
-      include: ["src/**/*.browser.test.{ts,tsx}"],
       name: "browser",
       environment: "jsdom",
+      exclude: ["src/**/*.node.test.{ts,tsx}", "node_modules"],
     },
   }),
   mergeConfig(baseConfig, {

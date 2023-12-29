@@ -9,7 +9,6 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    typedRoutes: true,
     turbo: true,
   },
 };

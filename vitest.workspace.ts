@@ -16,23 +16,28 @@ const baseConfig = defineConfig({
   test: {
     globals: true,
     setupFiles: ["src/__tests__/setup.tsx"],
+    restoreMocks: true,
+  },
+});
+
+const browserConfig = defineConfig({
+  plugins: [react()],
+  test: {
+    name: "browser",
+    environment: "jsdom",
+    exclude: ["src/**/*.node.test.{ts,tsx}", "node_modules"],
+  },
+});
+
+const nodeConfig = defineConfig({
+  test: {
+    include: ["src/**/*.node.test.{ts,tsx}"],
+    name: "node",
+    environment: "node",
   },
 });
 
 export default defineWorkspace([
-  mergeConfig(baseConfig, {
-    plugins: [react()],
-    test: {
-      name: "browser",
-      environment: "jsdom",
-      exclude: ["src/**/*.node.test.{ts,tsx}", "node_modules"],
-    },
-  }),
-  mergeConfig(baseConfig, {
-    test: {
-      include: ["src/**/*.node.test.{ts,tsx}"],
-      name: "node",
-      environment: "node",
-    },
-  }),
+  mergeConfig(baseConfig, browserConfig),
+  mergeConfig(baseConfig, nodeConfig),
 ]);

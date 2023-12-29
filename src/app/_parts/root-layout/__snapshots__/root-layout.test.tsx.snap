@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Layout > snapshot unchanged 1`] = `
+<DocumentFragment>
+  <div
+    class="flex bg-neutral-50 dark:bg-neutral-900 flex-col h-screen overflow-auto"
+  >
+    <header
+      class="bg-white/70 dark:bg-white/5 backdrop-blur-sm sticky top-0"
+    >
+      <div
+        class="max-w-4xl mx-auto px-4 lg:px-0 py-1"
+      >
+        <a
+          class="font-bold py-1.5 text-lg inline-block hover:underline dark:text-neutral-300"
+          href="/"
+        >
+          blog.yoiw.dev
+        </a>
+      </div>
+    </header>
+    <div
+      class="grow"
+    >
+      <main
+        class="max-w-4xl mx-auto px-4 lg:px-0"
+      >
+        <h1>
+          hello world
+        </h1>
+      </main>
+    </div>
+  </div>
+</DocumentFragment>
+`;

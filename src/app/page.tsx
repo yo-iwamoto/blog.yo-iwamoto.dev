@@ -6,7 +6,9 @@ export default async function Page() {
 
   return (
     <div className="grid py-4 gap-4">
-      <h1 className="font-bold text-xl">最近のエントリ</h1>
+      <h1 className="font-bold text-xl lg:text-2xl text-neutral-800">
+        最近のエントリ
+      </h1>
 
       <PostCardList.Root>
         {articles.map((article) => (

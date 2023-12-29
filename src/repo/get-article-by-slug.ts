@@ -1,6 +1,7 @@
 import { env } from "@/config/env";
 import { cdnClient } from "./client";
 import type { Content } from "./client";
+import { transformArticleHtml } from "@/lib/transform-article-html";
 
 const articleModelUid = "article";
 
@@ -10,34 +11,34 @@ class Article {
     public slug: string,
     public tags: { name: string; slug: string }[],
     public publishedAt: Date,
+    public body: string,
   ) {}
 }
 
-export async function getAllArticles(): Promise<Article[]> {
-  const res = await cdnClient.getContents<
+export async function getArticleBySlug(slug: string): Promise<Article | null> {
+  const res = await cdnClient.getFirstContent<
     {
       title: string;
       slug: string;
       tags: { name: string; slug: string }[];
+      body: string;
     } & Content
   >({
     appUid: env.newtAppUid,
     modelUid: articleModelUid,
     query: {
-      order: ["-publishDate"],
-      select: ["title", "slug", "tags", "_sys"],
+      slug,
     },
   });
+  if (res === null) return null;
 
-  const articles = res.items.map(
-    (item) =>
-      new Article(
-        item.title,
-        item.slug,
-        item.tags,
-        new Date(item._sys.raw.firstPublishedAt),
-      ),
+  const article = new Article(
+    res.title,
+    res.slug,
+    res.tags,
+    new Date(res._sys.raw.firstPublishedAt),
+    transformArticleHtml(res.body),
   );
 
-  return articles;
+  return article;
 }

@@ -3,28 +3,31 @@ import { Link } from "@/components/link";
 import { SizedBox } from "@/components/sized-box";
 
 export function RootLayoutRoot({ children }: PropsWithChildren) {
-  return <div className="flex flex-col h-screen overflow-auto">{children}</div>;
+  return (
+    <div className="flex bg-neutral-50 dark:bg-neutral-900 flex-col h-screen overflow-auto">
+      {children}
+    </div>
+  );
 }
 
 export function RootLayoutHeader() {
   return (
-    <SizedBox
-      as="header"
-      className="py-2 w-full sticky top-0 bg-white/70 backdrop-blur-sm"
-    >
-      <Link
-        href="/"
-        className="font-bold py-2 text-lg inline-block hover:underline"
-      >
-        blog.yoiw.dev
-      </Link>
-    </SizedBox>
+    <header className="bg-white/70 dark:bg-white/5 backdrop-blur-sm sticky top-0">
+      <SizedBox className="py-1">
+        <Link
+          href="/"
+          className="font-bold py-1.5 text-lg inline-block hover:underline dark:text-neutral-300"
+        >
+          blog.yoiw.dev
+        </Link>
+      </SizedBox>
+    </header>
   );
 }
 
 export function RootLayoutContent({ children }: PropsWithChildren) {
   return (
-    <div className="bg-neutral-50 grow">
+    <div className="grow">
       <SizedBox as="main">{children}</SizedBox>
     </div>
   );

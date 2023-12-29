@@ -1,4 +1,4 @@
-import { getAllArticles } from "./articles";
+import { getAllArticles } from "./get-all-articles";
 
 const { getContents } = vi.hoisted(() => ({
   getContents: vi.fn(async () => ({

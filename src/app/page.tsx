@@ -1,14 +1,15 @@
-import { getAllArticles } from "@/repo/articles";
+import { getAllArticles } from "@/repo/get-all-articles";
 import { PostCardList } from "./_parts/post-card-list";
+import { Text } from "@/components/text";
 
 export default async function Page() {
   const articles = await getAllArticles();
 
   return (
     <div className="grid py-4 gap-4">
-      <h1 className="font-bold text-xl lg:text-2xl text-neutral-800">
+      <Text as="h1" className="font-bold text-xl lg:text-2xl">
         最近のエントリ
-      </h1>
+      </Text>
 
       <PostCardList.Root>
         {articles.map((article) => (

@@ -9,7 +9,7 @@ type Props = PropsWithChildren & {
 export function SizedBox({ children, as, className }: Props) {
   const Tag = as ?? "div";
   return (
-    <Tag className={cn("max-w-5xl mx-auto px-4 lg:px-0", className)}>
+    <Tag className={cn("max-w-4xl mx-auto px-4 lg:px-0", className)}>
       {children}
     </Tag>
   );

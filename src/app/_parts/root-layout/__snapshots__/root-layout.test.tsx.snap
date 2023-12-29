@@ -9,7 +9,7 @@ exports[`Layout > snapshot unchanged 1`] = `
       class="bg-white/70 dark:bg-white/5 backdrop-blur-sm sticky top-0"
     >
       <div
-        class="max-w-4xl mx-auto px-4 lg:px-0 py-1"
+        class="max-w-4xl mx-auto px-4 lg:px-0 py-1 flex justify-between items-center"
       >
         <a
           class="font-bold py-1.5 text-lg inline-block hover:underline dark:text-neutral-300"
@@ -17,6 +17,28 @@ exports[`Layout > snapshot unchanged 1`] = `
         >
           blog.yoiw.dev
         </a>
+        <nav>
+          <ul
+            class="flex gap-6"
+          >
+            <li>
+              <a
+                class="rounded-md py-1 text-lg text-neutral-700 underline-offset-4 hover:underline dark:text-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2"
+                href="/"
+              >
+                Posts
+              </a>
+            </li>
+            <li>
+              <a
+                class="rounded-md py-1 text-lg text-neutral-700 underline-offset-4 hover:underline dark:text-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2"
+                href="/tags"
+              >
+                Tags
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
     <div

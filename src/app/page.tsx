@@ -2,6 +2,8 @@ import { getAllArticles } from "@/repo/get-all-articles";
 import { PostCardList } from "./_parts/post-card-list";
 import { Text } from "@/components/text";
 
+export const dynamic = "force-static";
+
 export default async function Page() {
   const articles = await getAllArticles();
 

@@ -17,7 +17,7 @@
   }
 
   a {
-    @apply focus-within:rounded-md focus-within:ring-2 focus-within:ring-neutral-500 focus-within:ring-offset-2 focus:outline-none;
+    @apply focus-visible:rounded-md focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus:outline-none;
   }
 
   :not(pre) > code {
@@ -46,6 +46,8 @@
 
   // アプリケーションレイヤでの transform で挿入した heading link
   .heading-link {
-    @apply no-underline relative hover:underline hover:before:content-['#'] hover:before:absolute hover:before:text-xl hover:before:-left-3.5;
+    @apply no-underline relative;
+    @apply focus-visible:underline focus-visible:before:content-['#'] focus-visible:before:absolute focus-visible:before:text-xl focus-visible:before:-left-3.5 focus-visible:ring-0;
+    @apply hover:underline hover:before:content-['#'] hover:before:absolute hover:before:text-xl hover:before:-left-3.5;
   }
 }

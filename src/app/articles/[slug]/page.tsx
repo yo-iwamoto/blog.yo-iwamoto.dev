@@ -5,6 +5,8 @@ import { PostBody } from "./_parts/post-body";
 import { getArticleBySlug } from "@/repo/get-article-by-slug";
 import "@/styles/post-body.scss";
 
+export const dynamic = "force-static";
+
 type Props = {
   params: {
     slug: string;

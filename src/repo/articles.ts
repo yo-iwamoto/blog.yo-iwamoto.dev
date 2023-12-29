@@ -8,7 +8,7 @@ class Article {
   constructor(
     public title: string,
     public slug: string,
-    public tags: string[],
+    public tags: { name: string; slug: string }[],
     public publishedAt: Date,
   ) {}
 }
@@ -18,7 +18,7 @@ export async function getAllArticles(): Promise<Article[]> {
     {
       title: string;
       slug: string;
-      tags: string[];
+      tags: { name: string; slug: string }[];
     } & Content
   >({
     appUid: env.newtAppUid,

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 import { Noto_Sans_JP } from "next/font/google";
-import { Layout } from "./_parts/layout";
+import { RootLayout } from "./_parts/root-layout";
 import "@/styles/global.css";
 
 const fontStyle = Noto_Sans_JP({
@@ -15,14 +15,14 @@ export const metadata = {
   description: "Tech blog by yoiwamoto.",
 } satisfies Metadata;
 
-export default function RootLayout({ children }: PropsWithChildren) {
+export default function Layout({ children }: PropsWithChildren) {
   return (
     <html lang="ja">
       <body className={fontStyle.className}>
-        <Layout.Root>
-          <Layout.Header />
-          <Layout.Content>{children}</Layout.Content>
-        </Layout.Root>
+        <RootLayout.Root>
+          <RootLayout.Header />
+          <RootLayout.Content>{children}</RootLayout.Content>
+        </RootLayout.Root>
       </body>
     </html>
   );

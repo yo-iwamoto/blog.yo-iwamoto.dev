@@ -1,14 +1,14 @@
 import { render, within } from "@testing-library/react";
-import { Layout } from "./layout";
+import { RootLayout } from "./root-layout";
 
 function Compounded() {
   return (
-    <Layout.Root>
-      <Layout.Header />
-      <Layout.Content>
+    <RootLayout.Root>
+      <RootLayout.Header />
+      <RootLayout.Content>
         <h1>hello world</h1>
-      </Layout.Content>
-    </Layout.Root>
+      </RootLayout.Content>
+    </RootLayout.Root>
   );
 }
 

@@ -3,6 +3,7 @@ import { Text } from "@/components/text";
 import { getLatest10ArticlesByTag } from "@/repo/get-latest-10-articles-by-tag";
 import { notFound } from "next/navigation";
 
+export { generateMetadata } from "./generate-metadata";
 export { generateStaticParams } from "./generate-static-params";
 
 export const dynamic = "force-static";

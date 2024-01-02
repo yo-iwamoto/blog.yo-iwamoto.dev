@@ -21,7 +21,7 @@ export default async function Page({ params: { slug } }: PageProps) {
   }
 
   return (
-    <main className="mt-8 grid gap-4">
+    <div className="mt-8 grid gap-4">
       <Text className="px-2 text-xl">
         「<span className="font-bold">{slug}</span>
         」についてのエントリ
@@ -32,6 +32,6 @@ export default async function Page({ params: { slug } }: PageProps) {
           <PostCardList.Card key={article.slug} article={article} />
         ))}
       </PostCardList.Root>
-    </main>
+    </div>
   );
 }

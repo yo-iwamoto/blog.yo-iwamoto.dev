@@ -25,7 +25,7 @@ export default async function Page({ params: { slug } }: Props) {
   const { title, tags, publishedAt, body } = article;
 
   return (
-    <main className="my-8 grid gap-2">
+    <article className="my-8 grid gap-2">
       <Text as="h1" className="text-2xl font-bold md:text-3xl lg:text-4xl">
         {title}
       </Text>
@@ -54,6 +54,6 @@ export default async function Page({ params: { slug } }: Props) {
       </div>
 
       <PostBody body={body} />
-    </main>
+    </article>
   );
 }

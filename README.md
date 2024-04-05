@@ -1,3 +1,3 @@
-## 概要
+# blog.yoiw.dev
 
-個人的な Next.js アプリケーションのテンプレートです。
+https://blog.yoiw.dev

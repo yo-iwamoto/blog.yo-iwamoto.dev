@@ -1,6 +1,6 @@
-import { PropsWithChildren } from "react";
 import { Link } from "@/components/link";
 import { SizedBox } from "@/components/sized-box";
+import type { PropsWithChildren } from "react";
 import { NavLink } from "./nav-link";
 
 export function RootLayoutRoot({ children }: PropsWithChildren) {

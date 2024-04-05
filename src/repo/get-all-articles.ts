@@ -1,8 +1,8 @@
 import { env } from "@/config/env";
+import { ArticleListItem } from "@/model/article-list-item";
+import { cache } from "react";
 import { cdnClient } from "./client";
 import type { Content } from "./client";
-import { cache } from "react";
-import { ArticleListItem } from "@/model/article-list-item";
 
 const articleModelUid = "article";
 

@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.min.css";
+import { useEffect } from "react";
 
 export function useHighlightEffect() {
   useEffect(() => {

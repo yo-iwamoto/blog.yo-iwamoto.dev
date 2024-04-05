@@ -1,7 +1,7 @@
-import { getArticleBySlug } from "@/repo/get-article-by-slug";
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
 import { extractTextFromArticleHtml } from "@/lib/extract-text-from-article-html";
+import { getArticleBySlug } from "@/repo/get-article-by-slug";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: {

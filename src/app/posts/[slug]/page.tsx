@@ -1,9 +1,9 @@
 import { Link } from "@/components/link";
 import { Text } from "@/components/text";
-import { notFound } from "next/navigation";
-import { PostBody } from "./_parts/post-body";
 import { getArticleBySlug } from "@/repo/get-article-by-slug";
 import "@/styles/post-body.scss";
+import { notFound } from "next/navigation";
+import { PostBody } from "./_parts/post-body";
 
 export { generateMetadata } from "./generate-metadata";
 export { generateStaticParams } from "./generate-static-params";

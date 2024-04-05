@@ -1,4 +1,4 @@
-import { JSDOM, DOMWindow } from "jsdom";
+import { type DOMWindow, JSDOM } from "jsdom";
 
 const jsdom = new JSDOM();
 const domParser = new jsdom.window.DOMParser();

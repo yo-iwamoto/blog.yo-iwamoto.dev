@@ -1,8 +1,8 @@
+import { env } from "@/config/env";
+import "@/styles/global.scss";
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 import { RootLayout } from "./_parts/root-layout";
-import { env } from "@/config/env";
-import "@/styles/global.scss";
 
 export const metadata = {
   title: "blog.yoiw.dev",

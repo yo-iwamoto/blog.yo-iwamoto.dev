@@ -1,5 +1,5 @@
 import { env } from "@/config/env";
-import { createClient, type Content } from "newt-client-js";
+import { type Content, createClient } from "newt-client-js";
 
 export const cdnClient = createClient({
   apiType: "cdn",
@@ -7,4 +7,4 @@ export const cdnClient = createClient({
   spaceUid: env.newtSpaceUid,
 });
 
-export { Content };
+export type { Content };

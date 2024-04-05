@@ -1,9 +1,9 @@
 import { env } from "@/config/env";
+import { transformArticleHtml } from "@/lib/transform-article-html";
+import { Article } from "@/model/article";
+import { cache } from "react";
 import { cdnClient } from "./client";
 import type { Content } from "./client";
-import { transformArticleHtml } from "@/lib/transform-article-html";
-import { cache } from "react";
-import { Article } from "@/model/article";
 
 const articleModelUid = "article";
 

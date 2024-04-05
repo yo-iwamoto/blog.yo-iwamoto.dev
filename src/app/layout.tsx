@@ -1,4 +1,4 @@
-import { env } from "@/config/env";
+import { getServerSideEnv } from "@/config/env";
 import "@/styles/global.scss";
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
@@ -7,7 +7,7 @@ import { RootLayout } from "./_parts/root-layout";
 export const metadata = {
   title: "blog.yoiw.dev",
   description: "Tech blog by yoiwamoto.",
-  metadataBase: new URL(env.websiteUrl),
+  metadataBase: new URL(getServerSideEnv().websiteUrl),
   keywords: ["web development", "blog", "frontend", "yoiwamoto"],
   openGraph: {
     type: "article",

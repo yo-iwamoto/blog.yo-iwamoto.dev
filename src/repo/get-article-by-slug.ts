@@ -1,4 +1,4 @@
-import { env } from "@/config/env";
+import { getServerSideEnv } from "@/config/env";
 import { transformArticleHtml } from "@/lib/transform-article-html";
 import { Article } from "@/model/article";
 import { cache } from "react";
@@ -16,7 +16,7 @@ async function getArticleBySlugFn(slug: string): Promise<Article | null> {
       body: string;
     } & Content
   >({
-    appUid: env.newtAppUid,
+    appUid: getServerSideEnv().newtAppUid,
     modelUid: articleModelUid,
     query: {
       slug,

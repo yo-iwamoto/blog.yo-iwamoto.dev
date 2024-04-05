@@ -1,4 +1,4 @@
-import { env } from "@/config/env";
+import { getServerSideEnv } from "@/config/env";
 import { ArticleListItem } from "@/model/article-list-item";
 import { cache } from "react";
 import { type Content, cdnClient } from "./client";
@@ -13,7 +13,7 @@ async function getLatest10ArticlesByTagFn(tagSlug: string) {
       tags: { name: string; slug: string }[];
     } & Content
   >({
-    appUid: env.newtAppUid,
+    appUid: getServerSideEnv().newtAppUid,
     modelUid,
     query: {
       order: ["-publishDate"],

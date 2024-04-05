@@ -1,8 +1,8 @@
 {
-  "name": "my-next-template",
+  "name": "blog.yoiw.dev",
   "license": "MIT",
+  "packageManager": "pnpm@8.15.6",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

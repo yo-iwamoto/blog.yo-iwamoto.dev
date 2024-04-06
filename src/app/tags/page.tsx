@@ -1,6 +1,6 @@
 import { Link } from "@/components/link";
 import { Text } from "@/components/text";
-import { getAllTags } from "@/repo/get-all-tags";
+import { getAllEntries } from "@/repo/markdown";
 import type { Metadata } from "next";
 
 export const metadata = {
@@ -13,19 +13,24 @@ export const metadata = {
 export const dynamic = "force-static";
 
 export default async function Page() {
-  const tags = await getAllTags();
+  const tags: { [key in string]: number } = {};
+  for (const article of await getAllEntries()) {
+    for (const tag of article.meta.tags) {
+      tags[tag] = (tags[tag] ?? 0) + 1;
+    }
+  }
 
   return (
     <div className="mt-8 grid gap-4">
       <ul className="flex flex-wrap gap-2">
-        {tags.map(({ name, count, slug }) => (
-          <li key={name}>
+        {Object.entries(tags).map(([tag, count]) => (
+          <li key={tag}>
             <Link
-              href={`/tags/${slug}`}
+              href={`/tags/${tag}`}
               className="group inline-block rounded-md p-1 focus-within:ring-2 focus-within:ring-neutral-500 focus:outline-none"
             >
               <Text className="text-lg underline-offset-4 group-hover:underline">
-                {name}({count})
+                {tag}({count})
               </Text>
             </Link>
           </li>

@@ -1,6 +1,6 @@
 import { PostCardList } from "@/app/_parts/post-card-list";
 import { Text } from "@/components/text";
-import { getLatest10ArticlesByTag } from "@/repo/get-latest-10-articles-by-tag";
+import { getAllEntries } from "@/repo/markdown";
 import { notFound } from "next/navigation";
 
 export { generateMetadata } from "./generate-metadata";
@@ -15,7 +15,9 @@ type PageProps = {
 };
 
 export default async function Page({ params: { slug } }: PageProps) {
-  const articles = await getLatest10ArticlesByTag(slug);
+  const articles = (await getAllEntries()).filter((entry) =>
+    entry.meta.tags.includes(slug),
+  );
   if (articles.length === 0) {
     notFound();
   }
@@ -29,7 +31,7 @@ export default async function Page({ params: { slug } }: PageProps) {
 
       <PostCardList.Root>
         {articles.map((article) => (
-          <PostCardList.Card key={article.slug} article={article} />
+          <PostCardList.Card key={article.meta.slug} article={article} />
         ))}
       </PostCardList.Root>
     </div>

@@ -12,6 +12,8 @@ export function transformArticleHtml(html: string) {
 
   assignIdToHeadings(document);
 
+  addFileNameElement(document);
+
   return document.body.innerHTML;
 }
 
@@ -31,5 +33,22 @@ function assignIdToHeadings(document: DOMWindow["document"]) {
     parent.classList.add("heading-link");
 
     heading.replaceWith(parent);
+  }
+}
+
+const FILE_NAME_CLASS_PATTERN = /^language-[a-z]+:([a-z0-9.-\/]+)$/i;
+
+function addFileNameElement(document: Document) {
+  const codeElements = document.querySelectorAll("pre code");
+  for (const codeElement of codeElements) {
+    const fileName = Array.from(codeElement.classList)
+      .find((c) => FILE_NAME_CLASS_PATTERN.test(c))
+      ?.match(FILE_NAME_CLASS_PATTERN)?.[1];
+    if (fileName !== undefined) {
+      const span = document.createElement("span");
+      span.className = "file-name";
+      span.textContent = fileName;
+      codeElement.parentElement?.insertBefore(span, codeElement);
+    }
   }
 }

@@ -7,16 +7,21 @@ function PostCardListRoot({ children }: PropsWithChildren) {
   return <ul className="grid gap-2">{children}</ul>;
 }
 
-function PostCardListCard({
-  article: { title, slug, tags, publishedAt },
-}: {
+type PostCardListCardProps = {
   article: {
-    title: string;
-    slug: string;
-    tags: { name: string; slug: string }[];
-    publishedAt: Date;
+    meta: {
+      title: string;
+      tags: string[];
+      publishedAt: string;
+      slug: string;
+    };
+    content: string;
   };
-}) {
+};
+
+function PostCardListCard({
+  article: { meta: { title, tags, publishedAt, slug } },
+}: PostCardListCardProps) {
   return (
     <li>
       <article>
@@ -32,18 +37,16 @@ function PostCardListCard({
           </Text>
 
           <div className="flex items-end gap-4">
-            <Text className="text-sm">
-              {publishedAt.toISOString().split("T")[0]}
-            </Text>
+            <Text className="text-sm">{publishedAt}</Text>
 
             <div className="flex flex-wrap items-center gap-2">
               {tags.map((tag) => (
                 <Text
                   as="span"
-                  key={tag.slug}
+                  key={tag}
                   className="rounded-lg bg-neutral-800 px-2 py-0.5 text-neutral-200"
                 >
-                  {tag.name}
+                  {tag}
                 </Text>
               ))}
             </div>

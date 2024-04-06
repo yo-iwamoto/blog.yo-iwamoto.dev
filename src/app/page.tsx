@@ -1,11 +1,11 @@
 import { Text } from "@/components/text";
-import { getAllArticles } from "@/repo/get-all-articles";
 import { PostCardList } from "./_parts/post-card-list";
+import { getAllEntries } from "@/repo/markdown";
 
 export const dynamic = "force-static";
 
 export default async function Page() {
-  const articles = await getAllArticles();
+  const articles = await getAllEntries();
 
   return (
     <div className="grid py-4 gap-4">
@@ -15,7 +15,7 @@ export default async function Page() {
 
       <PostCardList.Root>
         {articles.map((article) => (
-          <PostCardList.Card key={article.slug} article={article} />
+          <PostCardList.Card key={article.meta.slug} article={article} />
         ))}
       </PostCardList.Root>
     </div>

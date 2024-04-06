@@ -1,5 +1,5 @@
 import { extractTextFromArticleHtml } from "@/lib/extract-text-from-article-html";
-import { getArticleBySlug } from "@/repo/get-article-by-slug";
+import { getAllEntries } from "@/repo/markdown";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -10,21 +10,23 @@ type Props = {
 };
 
 export async function generateMetadata({ params: { slug } }: Props) {
-  const article = await getArticleBySlug(slug);
-  if (article === null) {
+  const article = (await getAllEntries()).find(
+    (entry) => entry.meta.slug === slug,
+  );
+  if (article === undefined) {
     notFound();
   }
 
   const bodyTextFirst100Letters = extractTextFromArticleHtml(
-    article.body,
+    article.content,
   ).slice(0, 100);
 
   return {
-    title: `${article.title} | blog.yoiw.dev`,
+    title: `${article.meta.title} | blog.yoiw.dev`,
     description: `${bodyTextFirst100Letters}...`,
-    keywords: article.tags.map((tag) => tag.name),
+    keywords: article.meta.tags,
     alternates: {
-      canonical: `/posts/${article.slug}/`,
+      canonical: `/posts/${article.meta.slug}/`,
     },
   } satisfies Metadata;
 }

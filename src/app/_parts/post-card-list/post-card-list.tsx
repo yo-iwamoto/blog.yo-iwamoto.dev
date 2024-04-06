@@ -20,7 +20,9 @@ type PostCardListCardProps = {
 };
 
 function PostCardListCard({
-  article: { meta: { title, tags, publishedAt, slug } },
+  article: {
+    meta: { title, tags, publishedAt, slug },
+  },
 }: PostCardListCardProps) {
   return (
     <li>

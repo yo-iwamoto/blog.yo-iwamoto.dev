@@ -1,8 +1,8 @@
 import { Link } from "@/components/link";
 import { Text } from "@/components/text";
+import { getAllEntries } from "@/repo/markdown";
 import "@/styles/post-body.scss";
 import { notFound } from "next/navigation";
-import { getAllEntries } from "@/repo/markdown";
 import { HighlightNode } from "./_/highlight-node";
 
 export { generateMetadata } from "./generate-metadata";

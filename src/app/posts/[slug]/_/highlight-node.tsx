@@ -3,7 +3,7 @@
 import { useHighlightEffect } from "./use-highlight-effect";
 
 export function HighlightNode() {
-  // useHighlightEffect();
+  useHighlightEffect();
 
   return false;
 }

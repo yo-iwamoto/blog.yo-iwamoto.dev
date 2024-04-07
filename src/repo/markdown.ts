@@ -30,9 +30,9 @@ const frontMatterSchema = z.object({
 
 export async function getAllEntries() {
   const entries = await Promise.all(
-    fs.readdirSync("contents/posts").map(async (fileName) => {
+    fs.readdirSync("src/contents/posts").map(async (fileName) => {
       const file = fs.readFileSync(
-        path.join("contents/posts", fileName),
+        path.join("src/contents/posts", fileName),
         "utf-8",
       );
       const [, frontMatterString, body] = file.split("---\n");

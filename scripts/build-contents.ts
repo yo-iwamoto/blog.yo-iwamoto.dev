@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { transformArticleHtml } from "@/lib/transform-article-html";
+import { transformArticleHtml } from "../src/lib/transform-article-html";
 import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -28,11 +28,11 @@ const frontMatterSchema = z.object({
   ),
 });
 
-export async function getAllEntries() {
+async function getAllEntries() {
   const entries = await Promise.all(
-    fs.readdirSync("src/contents/posts").map(async (fileName) => {
+    fs.readdirSync("contents/posts").map(async (fileName) => {
       const file = fs.readFileSync(
-        path.join("src/contents/posts", fileName),
+        path.join("contents/posts", fileName),
         "utf-8",
       );
       const [, frontMatterString, body] = file.split("---\n");
@@ -59,3 +59,14 @@ export async function getAllEntries() {
 
   return sorted;
 }
+
+async function main() {
+  const allEntries = await getAllEntries();
+  fs.writeFileSync(
+    "src/contents.json",
+    JSON.stringify(allEntries, null, 2),
+    "utf-8",
+  );
+}
+
+main();

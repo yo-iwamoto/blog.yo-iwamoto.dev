@@ -1,11 +1,11 @@
 import { Text } from "@/components/text";
-import { getAllEntries } from "@/repo/markdown";
 import { PostCardList } from "./_parts/post-card-list";
+import { allEntries } from "@/data/contents";
 
 export const dynamic = "force-static";
 
-export default async function Page() {
-  const articles = await getAllEntries();
+export default function Page() {
+  const articles = allEntries;
 
   return (
     <div className="grid py-4 gap-4">

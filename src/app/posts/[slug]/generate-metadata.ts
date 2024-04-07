@@ -1,5 +1,5 @@
+import { allEntries } from "@/data/contents";
 import { extractTextFromArticleHtml } from "@/lib/extract-text-from-article-html";
-import { getAllEntries } from "@/repo/markdown";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -9,10 +9,8 @@ type Props = {
   };
 };
 
-export async function generateMetadata({ params: { slug } }: Props) {
-  const article = (await getAllEntries()).find(
-    (entry) => entry.meta.slug === slug,
-  );
+export function generateMetadata({ params: { slug } }: Props) {
+  const article = allEntries.find((entry) => entry.meta.slug === slug);
   if (article === undefined) {
     notFound();
   }

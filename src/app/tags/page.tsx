@@ -1,6 +1,6 @@
 import { Link } from "@/components/link";
 import { Text } from "@/components/text";
-import { getAllEntries } from "@/repo/markdown";
+import { allEntries } from "@/data/contents";
 import type { Metadata } from "next";
 
 export const metadata = {
@@ -12,9 +12,9 @@ export const metadata = {
 
 export const dynamic = "force-static";
 
-export default async function Page() {
+export default function Page() {
   const tags: { [key in string]: number } = {};
-  for (const article of await getAllEntries()) {
+  for (const article of allEntries) {
     for (const tag of article.meta.tags) {
       tags[tag] = (tags[tag] ?? 0) + 1;
     }

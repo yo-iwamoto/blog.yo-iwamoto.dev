@@ -1,9 +1,9 @@
 import { Link } from "@/components/link";
 import { Text } from "@/components/text";
-import { getAllEntries } from "@/repo/markdown";
 import "@/styles/post-body.scss";
 import { notFound } from "next/navigation";
 import { HighlightNode } from "./_/highlight-node";
+import { allEntries } from "@/data/contents";
 
 export { generateMetadata } from "./generate-metadata";
 export { generateStaticParams } from "./generate-static-params";
@@ -16,10 +16,8 @@ type Props = {
   };
 };
 
-export default async function Page({ params: { slug } }: Props) {
-  const article = (await getAllEntries()).find(
-    (entry) => entry.meta.slug === slug,
-  );
+export default function Page({ params: { slug } }: Props) {
+  const article = allEntries.find((entry) => entry.meta.slug === slug);
   if (article === undefined) {
     notFound();
   }

@@ -1,8 +1,8 @@
-import { getAllEntries } from "@/repo/markdown";
+import { allEntries } from "@/data/contents";
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const tags = new Set();
-  for (const article of await getAllEntries()) {
+  for (const article of allEntries) {
     for (const tag of article.meta.tags) {
       tags.add(tag);
     }

@@ -4,7 +4,9 @@
   "packageManager": "pnpm@8.15.6",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm build:content && pnpm build:next",
+    "build:next": "next build",
+    "build:content": "tsx scripts/build-contents.ts",
     "start": "next start",
     "check": "biome check .",
     "check:apply": "biome check --apply .",

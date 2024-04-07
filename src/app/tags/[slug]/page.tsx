@@ -1,6 +1,6 @@
 import { PostCardList } from "@/app/_parts/post-card-list";
 import { Text } from "@/components/text";
-import { getAllEntries } from "@/repo/markdown";
+import { allEntries } from "@/data/contents";
 import { notFound } from "next/navigation";
 
 export { generateMetadata } from "./generate-metadata";
@@ -14,10 +14,8 @@ type PageProps = {
   };
 };
 
-export default async function Page({ params: { slug } }: PageProps) {
-  const articles = (await getAllEntries()).filter((entry) =>
-    entry.meta.tags.includes(slug),
-  );
+export default function Page({ params: { slug } }: PageProps) {
+  const articles = allEntries.filter((entry) => entry.meta.tags.includes(slug));
   if (articles.length === 0) {
     notFound();
   }

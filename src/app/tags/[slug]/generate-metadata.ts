@@ -6,7 +6,7 @@ type Props = {
   };
 };
 
-export async function generateMetadata({ params: { slug } }: Props) {
+export function generateMetadata({ params: { slug } }: Props) {
   return {
     title: `「${slug}」に関する記事一覧 | blog.yoiw.dev`,
     alternates: {

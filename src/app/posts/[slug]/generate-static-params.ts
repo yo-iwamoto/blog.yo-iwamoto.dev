@@ -1,7 +1,7 @@
-import { getAllEntries } from "@/repo/markdown";
+import { allEntries } from "@/data/contents";
 
-export async function generateStaticParams() {
-  const articles = await getAllEntries();
+export function generateStaticParams() {
+  const articles = allEntries;
 
   return articles.map(({ meta: { slug } }) => ({
     params: { slug },

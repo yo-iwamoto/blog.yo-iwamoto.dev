@@ -1,6 +1,6 @@
+import type { Meta, StoryObj } from "@storybook/react";
 import type { ComponentPropsWithoutRef } from "react";
 import { PostCardList } from "./post-card-list";
-import type { StoryObj, Meta } from "@storybook/react";
 
 type Article = ComponentPropsWithoutRef<typeof PostCardList.Card>["article"];
 

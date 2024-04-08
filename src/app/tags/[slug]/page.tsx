@@ -1,4 +1,4 @@
-import { PostCardList } from "@/app/_/post-card-list";
+import { PostCardList } from "@/app/_internal/post-card-list";
 import { Text } from "@/components/text";
 import { allEntries } from "@/data/contents";
 import { notFound } from "next/navigation";

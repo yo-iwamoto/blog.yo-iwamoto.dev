@@ -63,7 +63,7 @@ async function getAllEntries() {
 async function main() {
   const allEntries = await getAllEntries();
   fs.writeFileSync(
-    "src/contents.json",
+    "src/data/contents.json",
     `${JSON.stringify(allEntries, null, 2)}\n`,
     "utf-8",
   );

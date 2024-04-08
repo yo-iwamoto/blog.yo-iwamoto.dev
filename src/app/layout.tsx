@@ -2,7 +2,7 @@ import { getServerSideEnv } from "@/config/env";
 import "@/styles/global.scss";
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
-import { RootLayout } from "./_parts/root-layout";
+import { RootLayout } from "./_/root-layout";
 
 export const metadata = {
   title: "blog.yoiw.dev",

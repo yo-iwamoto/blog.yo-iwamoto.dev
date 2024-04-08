@@ -1,6 +1,6 @@
 import { Text } from "@/components/text";
 import { allEntries } from "@/data/contents";
-import { PostCardList } from "./_parts/post-card-list";
+import { PostCardList } from "./_/post-card-list";
 
 export const dynamic = "force-static";
 

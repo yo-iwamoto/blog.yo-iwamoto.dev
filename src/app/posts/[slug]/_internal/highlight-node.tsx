@@ -1,9 +1,7 @@
-"use client";
+import dynamic from "next/dynamic";
 
-import { useHighlightEffect } from "./use-highlight-effect";
+const HighlightNode = dynamic(() => import("./highlight-node-internal"), {
+  ssr: false,
+});
 
-export function HighlightNode() {
-  useHighlightEffect();
-
-  return false;
-}
+export { HighlightNode };

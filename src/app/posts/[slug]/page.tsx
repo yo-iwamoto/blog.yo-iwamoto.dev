@@ -3,7 +3,7 @@ import { Text } from "@/components/text";
 import { allEntries } from "@/data/contents";
 import "@/styles/post-body.scss";
 import { notFound } from "next/navigation";
-import { HighlightNode } from "./_internal/highlight-node";
+import HighlightNode from "./_internal/highlight-node-internal";
 
 export { generateMetadata } from "./generate-metadata";
 export { generateStaticParams } from "./generate-static-params";

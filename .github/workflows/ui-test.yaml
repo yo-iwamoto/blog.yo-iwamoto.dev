@@ -1,17 +1,15 @@
-name: CI
+name: "Chromatic"
 
-on:
-  pull_request:
-  push:
-    branches: [main]
+on: push
 
 jobs:
-  ci:
+  chromatic:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install Node.js
         uses: actions/setup-node@v3
@@ -24,11 +22,7 @@ jobs:
           version: 8.15.6
           run_install: true
 
-      - name: Typecheck
-        run: pnpm typecheck
-
-      - name: Lint
-        run: pnpm check
-
-      - name: Test
-        run: pnpm test
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

@@ -12,5 +12,7 @@ exports[`transformArticleHtml > transform 結果の snapshot が一致するこ�
 <ol>
 <li>Item 1</li>
 <li>Item 2</li>
-</ol>"
+</ol>
+<pre><span class="file-name">src/hello-world.ts</span><code class="language-typescript:src/hello-world.ts">console.log("Hello, world!");</code>
+</pre>"
 `;

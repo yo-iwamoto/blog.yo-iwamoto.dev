@@ -36,7 +36,7 @@ function assignIdToHeadings(document: DOMWindow["document"]) {
   }
 }
 
-const FILE_NAME_CLASS_PATTERN = /^language-[a-z]+:([a-z0-9.-\/]+)$/i;
+const FILE_NAME_CLASS_PATTERN = /^language-[a-z]+:([a-z0-9.\-\/]+)$/i;
 
 function addFileNameElement(document: Document) {
   const codeElements = document.querySelectorAll("pre code");

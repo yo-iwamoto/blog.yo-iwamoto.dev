@@ -1,8 +1,10 @@
+"use client";
+
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.min.css";
 import { useEffect } from "react";
 
-export function useHighlightEffect() {
+function useHighlightEffect() {
   useEffect(() => {
     const codeElements = document.querySelectorAll("pre code");
 
@@ -13,3 +15,11 @@ export function useHighlightEffect() {
     }
   });
 }
+
+function HighlightNode() {
+  useHighlightEffect();
+
+  return false;
+}
+
+export default HighlightNode;

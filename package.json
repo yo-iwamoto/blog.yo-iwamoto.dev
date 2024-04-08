@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "pnpm build:content && pnpm build:next",
     "build:next": "next build",
-    "build:content": "tsx scripts/build-contents.ts",
+    "build:content": "tsx src/scripts/build-contents.ts",
     "start": "next start",
     "check": "biome check .",
     "check:apply": "biome check --apply .",

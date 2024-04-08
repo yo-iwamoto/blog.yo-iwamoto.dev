@@ -5,7 +5,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import { z } from "zod";
-import { transformArticleHtml } from "../src/lib/transform-article-html";
+import { transformArticleHtml } from "../lib/transform-article-html";
 
 async function parseMarkdown(markdownString: string) {
   return unified()
@@ -64,7 +64,7 @@ async function main() {
   const allEntries = await getAllEntries();
   fs.writeFileSync(
     "src/contents.json",
-    JSON.stringify(allEntries, null, 2),
+    `${JSON.stringify(allEntries, null, 2)}\n`,
     "utf-8",
   );
 }

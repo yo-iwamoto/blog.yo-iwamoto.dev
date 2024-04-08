@@ -5,7 +5,10 @@
       "slug": "vitest-restore-mocks",
       "title": "Vitest の restoreMocks はとりあえず true でいいと思います",
       "publishedAt": "2023-12-29",
-      "tags": ["vitest", "testing"]
+      "tags": [
+        "vitest",
+        "testing"
+      ]
     }
   },
   {
@@ -14,7 +17,9 @@
       "slug": "route-handlers",
       "title": "appDir の Route Handlers を使う・API Routes からの変更点",
       "publishedAt": "2023-04-22",
-      "tags": ["nextjs"]
+      "tags": [
+        "nextjs"
+      ]
     }
   }
 ]

@@ -41,14 +41,12 @@ Vitest（Jest でも同じようですが）では、モックのリセットに
 import { render } from '@testing-library/react';
 import { UserProfile } from './user-profile';
 
-const { useUserQuery } = vi.hoisted(() => ({
-  useUserQuery: vi.fn(() => ({
+const useUserQuery = vi.hoisted(() => 
+  vi.fn(() => ({
     data: { name: 'John Doe' },
   })),
-}));
-vi.mock('./use-user-query', () => ({
-  useUserQuery,
-}));
+);
+vi.mock('./use-user-query', () => ({ useUserQuery }));
 
 describe('UserProfile', () => {
   it('ユーザー名が表示されること', () => {
@@ -115,9 +113,7 @@ export function ShowToastButton({ disabled = false }: Props) {
 import { ShowToastButton } from './show-toast-button';
 import userEvent from '@testing-library/user-event';
 
-const { showToast } = vi.hoisted(() => ({
-  showToast: vi.fn(),
-}));
+const showToast = vi.hoisted(() => vi.fn());
 vi.mock('./use-toast', () => ({
   useToast: vi.fn(() => ({ showToast })),
 }));

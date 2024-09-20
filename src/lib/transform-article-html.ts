@@ -27,12 +27,15 @@ function assignIdToHeadings(document: DOMWindow["document"]) {
     const id = text.replaceAll(/ /g, "-").toLowerCase();
     heading.id = id;
 
+    const div = document.createElement("div");
+    div.classList.add("link-container");
     const parent = document.createElement("a");
     parent.href = `#${id}`;
     parent.appendChild(heading.cloneNode(true));
     parent.classList.add("heading-link");
+    div.appendChild(parent);
 
-    heading.replaceWith(parent);
+    heading.replaceWith(div);
   }
 }
 

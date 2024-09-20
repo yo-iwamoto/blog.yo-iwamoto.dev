@@ -5,7 +5,7 @@
   h4,
   h5,
   h6 {
-    @apply dark:text-neutral-300 scroll-mt-14;
+    @apply dark:text-neutral-300 scroll-mt-14 mt-4 mb-2;
     > a {
       @apply font-bold no-underline hover:text-gray-500 dark:text-neutral-300;
     }
@@ -13,7 +13,7 @@
   p,
   strong,
   a {
-    @apply dark:text-neutral-300;
+    @apply text-neutral-900 dark:text-neutral-300;
   }
 
   a {
@@ -32,6 +32,7 @@
     @apply rounded-md bg-neutral-200 px-2 py-1 text-sm dark:bg-neutral-400;
   }
 
+
   pre {
     @apply relative mt-4 max-w-[calc(100vw_-_2rem)] p-0 overflow-visible rounded-md;
     @apply has-[.file-name]:mt-14 has-[.file-name]:rounded-tl-none;
@@ -46,13 +47,13 @@
     code {
       // .hljs にあたるスタイルによるレイアウトシフトを防ぐ
       @apply p-[1em] block;
-      @apply max-w-full overflow-x-auto rounded-md;
+      @apply max-w-full overflow-x-auto rounded-md text-sm leading-relaxed md:text-base;
     }
   }
 
   // アプリケーションレイヤでの transform で挿入した heading link
   .heading-link {
-    @apply no-underline relative;
+    @apply no-underline relative inline-block;
     @apply focus-visible:underline focus-visible:before:content-['#'] focus-visible:before:absolute focus-visible:before:text-xl focus-visible:before:-left-3.5 focus-visible:ring-0;
     @apply hover:underline hover:before:content-['#'] hover:before:absolute hover:before:text-xl hover:before:-left-3.5;
   }

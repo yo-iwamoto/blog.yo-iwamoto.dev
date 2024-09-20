@@ -28,7 +28,7 @@ export default function Page({ params: { slug } }: Props) {
   } = article;
 
   return (
-    <article className="my-8 grid gap-2">
+    <article className="my-8 grid gap-4">
       <Text as="h1" className="text-2xl font-bold md:text-3xl lg:text-4xl">
         {title}
       </Text>

@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { SizedBox } from "./sized-box";
 
 describe("SizedBox", () => {
-
   it("children が描画されること", () => {
     const { getByText } = render(<SizedBox>children</SizedBox>);
 

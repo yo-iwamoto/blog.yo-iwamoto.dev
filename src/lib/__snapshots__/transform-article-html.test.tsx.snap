@@ -1,13 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`transformArticleHtml > transform 結果の snapshot が一致すること 1`] = `
-"<a href="#heading-2" class="heading-link"><h2 id="heading-2">Heading 2</h2></a>
+"<div class="link-container"><a href="#heading-2" class="heading-link"><h2 id="heading-2">Heading 2</h2></a></div>
 <p>Paragraph 1</p>
 <ul>
 <li>Item 1</li>
 <li>Item 2</li>
 </ul>
-<a href="#heading-3" class="heading-link"><h3 id="heading-3">Heading 3</h3></a>
+<div class="link-container"><a href="#heading-3" class="heading-link"><h3 id="heading-3">Heading 3</h3></a></div>
 <p>Paragraph 2</p>
 <ol>
 <li>Item 1</li>

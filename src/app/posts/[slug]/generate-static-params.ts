@@ -1,4 +1,4 @@
-import { allEntries } from "@/data/contents";
+import { allEntries } from "#src/data/contents";
 
 export function generateStaticParams() {
   const articles = allEntries;

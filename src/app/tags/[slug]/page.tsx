@@ -1,6 +1,6 @@
-import { PostCardList } from "@/app/_internal/post-card-list";
-import { Text } from "@/components/text";
-import { allEntries } from "@/data/contents";
+import { PostCardList } from "#src/app/_internal/post-card-list";
+import { Text } from "#src/components/text";
+import { allEntries } from "#src/data/contents";
 import { notFound } from "next/navigation";
 
 export { generateMetadata } from "./generate-metadata";

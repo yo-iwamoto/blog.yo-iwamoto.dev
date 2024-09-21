@@ -1,5 +1,5 @@
-import { getServerSideEnv } from "@/config/env";
-import "@/styles/global.scss";
+import { getServerSideEnv } from "#src/config/env";
+import "#src/styles/global.scss";
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 import { RootLayout } from "./_internal/root-layout";

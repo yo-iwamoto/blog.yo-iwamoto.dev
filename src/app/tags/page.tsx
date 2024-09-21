@@ -1,6 +1,6 @@
-import { Link } from "@/components/link";
-import { Text } from "@/components/text";
-import { allEntries } from "@/data/contents";
+import { Link } from "#src/components/link";
+import { Text } from "#src/components/text";
+import { allEntries } from "#src/data/contents";
 import type { Metadata } from "next";
 
 export const metadata = {

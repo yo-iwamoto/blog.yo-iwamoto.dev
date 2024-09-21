@@ -1,5 +1,5 @@
-import { Link } from "@/components/link";
-import { SizedBox } from "@/components/sized-box";
+import { Link } from "#src/components/link";
+import { SizedBox } from "#src/components/sized-box";
 import type { PropsWithChildren } from "react";
 import { NavLink } from "./nav-link";
 

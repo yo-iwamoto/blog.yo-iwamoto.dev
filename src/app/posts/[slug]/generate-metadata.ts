@@ -1,5 +1,5 @@
-import { allEntries } from "@/data/contents";
-import { extractTextFromArticleHtml } from "@/lib/extract-text-from-article-html";
+import { allEntries } from "#src/data/contents";
+import { extractTextFromArticleHtml } from "#src/lib/extract-text-from-article-html";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 

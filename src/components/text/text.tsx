@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "#src/lib/utils.js";
 import type { PropsWithChildren } from "react";
 import type { ComponentPropsWithoutRef, ElementType } from "react";
 

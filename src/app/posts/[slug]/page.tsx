@@ -1,7 +1,7 @@
-import { Link } from "@/components/link";
-import { Text } from "@/components/text";
-import { allEntries } from "@/data/contents";
-import "@/styles/post-body.scss";
+import { Link } from "#src/components/link";
+import { Text } from "#src/components/text";
+import { allEntries } from "#src/data/contents";
+import "#src/styles/post-body.scss";
 import { notFound } from "next/navigation";
 import HighlightNode from "./_internal/highlight-node-internal";
 

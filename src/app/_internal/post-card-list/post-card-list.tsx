@@ -1,6 +1,6 @@
-import { Link } from "@/components/link";
-import { Text } from "@/components/text";
-import { cn } from "@/lib/utils";
+import { Link } from "#src/components/link";
+import { Text } from "#src/components/text/text.jsx";
+import { cn } from "#src/lib/utils";
 import type { PropsWithChildren } from "react";
 
 function PostCardListRoot({ children }: PropsWithChildren) {

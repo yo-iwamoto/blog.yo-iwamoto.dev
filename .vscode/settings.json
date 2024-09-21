@@ -5,6 +5,5 @@
     "source.fixAll.eslint": "explicit"
   },
   "eslint.validate": ["typescript", "typescriptreact"],
-  "typescript.tsdk": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "biome.enabled": true
 }

@@ -1,5 +1,5 @@
-import { Text } from "@/components/text";
-import { allEntries } from "@/data/contents";
+import { Text } from "#src/components/text";
+import { allEntries } from "../data/contents";
 import { PostCardList } from "./_internal/post-card-list";
 
 export const dynamic = "force-static";

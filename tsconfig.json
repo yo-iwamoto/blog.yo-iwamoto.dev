@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "strict": true,
     "esModuleInterop": true,
     "noEmit": true,
@@ -16,9 +16,6 @@
     "isolatedModules": true,
     "incremental": false,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "module": "esnext",
     "resolveJsonModule": true,
     "types": ["vitest/globals"],

@@ -1,7 +1,7 @@
+import { notFound } from "next/navigation";
 import { PostCardList } from "#src/app/_internal/post-card-list";
 import { Text } from "#src/components/text";
 import { allEntries } from "#src/data/contents";
-import { notFound } from "next/navigation";
 
 export { generateMetadata } from "./generate-metadata";
 export { generateStaticParams } from "./generate-static-params";

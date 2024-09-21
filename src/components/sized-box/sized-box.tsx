@@ -1,5 +1,5 @@
-import { cn } from "#src/lib/utils";
 import type { ElementType, PropsWithChildren } from "react";
+import { cn } from "#src/lib/utils";
 
 type Props = PropsWithChildren & {
   as?: ElementType;

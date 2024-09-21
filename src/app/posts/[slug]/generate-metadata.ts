@@ -1,7 +1,7 @@
-import { allEntries } from "#src/data/contents";
-import { extractTextFromArticleHtml } from "#src/lib/extract-text-from-article-html";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { allEntries } from "#src/data/contents";
+import { extractTextFromArticleHtml } from "#src/lib/extract-text-from-article-html";
 
 type Props = {
   params: {

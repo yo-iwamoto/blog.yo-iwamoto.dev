@@ -1,9 +1,9 @@
 "use client";
 
-import { cn } from "#src/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { PropsWithChildren } from "react";
+import { cn } from "#src/lib/utils";
 
 type Props = PropsWithChildren<{
   href: string;

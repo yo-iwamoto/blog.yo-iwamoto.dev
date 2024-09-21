@@ -1,7 +1,7 @@
-import { Link } from "#src/components/link";
-import { Text } from "#src/components/text/text.jsx";
-import { cn } from "#src/lib/utils";
 import type { PropsWithChildren } from "react";
+import { Link } from "#src/components/link";
+import { Text } from "#src/components/text/text";
+import { cn } from "#src/lib/utils";
 
 function PostCardListRoot({ children }: PropsWithChildren) {
   return <ul className="grid gap-2">{children}</ul>;

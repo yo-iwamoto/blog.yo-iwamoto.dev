@@ -23,6 +23,10 @@
     "chromatic": "chromatic"
   },
   "imports": {
+    "#src/data/contents": {
+      "storybook": "./src/data/contents.mock.ts",
+      "default": "./src/data/contents.ts"
+    },
     "#*": ["./*", "./*.ts", "./*.tsx", "./*/index.ts", "./*/index.tsx"]
   },
   "dependencies": {

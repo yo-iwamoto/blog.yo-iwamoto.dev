@@ -4,7 +4,7 @@ import { PostCardList } from "./_internal/post-card-list";
 
 export const dynamic = "force-static";
 
-export default async function Page() {
+export default function Page() {
   const articles = allEntries;
 
   return (

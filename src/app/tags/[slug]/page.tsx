@@ -9,12 +9,14 @@ export { generateStaticParams } from "./generate-static-params";
 export const dynamic = "force-static";
 
 type PageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function Page({ params: { slug } }: PageProps) {
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
+
   const articles = allEntries.filter((entry) => entry.meta.tags.includes(slug));
   if (articles.length === 0) {
     notFound();

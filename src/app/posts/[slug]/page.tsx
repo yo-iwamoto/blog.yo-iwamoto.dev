@@ -11,12 +11,14 @@ export { generateStaticParams } from "./generate-static-params";
 export const dynamic = "force-static";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function Page({ params: { slug } }: Props) {
+export default async function Page({ params }: Props) {
+  const { slug } = await params;
+
   const article = allEntries.find((entry) => entry.meta.slug === slug);
   if (article === undefined) {
     notFound();

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export function generateMetadata({ params: { slug } }: Props) {
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+
   return {
     title: `「${slug}」に関する記事一覧 | blog.yoiw.dev`,
     alternates: {

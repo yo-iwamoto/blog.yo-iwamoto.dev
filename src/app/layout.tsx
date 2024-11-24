@@ -31,7 +31,7 @@ export const metadata = {
   },
 } satisfies Metadata;
 
-export default function Layout({ children }: PropsWithChildren) {
+export default async function Layout({ children }: PropsWithChildren) {
   return (
     <html lang="ja">
       <body>

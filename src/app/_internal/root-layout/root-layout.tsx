@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from "react";
 import { Link } from "#src/components/link";
 import { SizedBox } from "#src/components/sized-box";
-import { NavLink } from "./nav-link";
+import { NavLink, navLinkStyle } from "./nav-link";
 
 export function RootLayoutRoot({ children }: PropsWithChildren) {
   return (
@@ -29,6 +29,11 @@ export function RootLayoutHeader() {
             </li>
             <li>
               <NavLink href="/tags">Tags</NavLink>
+            </li>
+            <li>
+              <a href="https://yoiw.dev" className={navLinkStyle}>
+                Profile
+              </a>
             </li>
           </ul>
         </nav>

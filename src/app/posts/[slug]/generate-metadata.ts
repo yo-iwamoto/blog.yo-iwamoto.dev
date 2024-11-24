@@ -4,12 +4,14 @@ import { allEntries } from "#src/data/contents";
 import { extractTextFromArticleHtml } from "#src/lib/extract-text-from-article-html";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export function generateMetadata({ params: { slug } }: Props) {
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+
   const article = allEntries.find((entry) => entry.meta.slug === slug);
   if (article === undefined) {
     notFound();

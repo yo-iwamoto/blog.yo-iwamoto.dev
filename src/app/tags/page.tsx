@@ -12,7 +12,7 @@ export const metadata = {
 
 export const dynamic = "force-static";
 
-export default function Page() {
+export default async function Page() {
   const tags: { [key in string]: number } = {};
   for (const article of allEntries) {
     for (const tag of article.meta.tags) {

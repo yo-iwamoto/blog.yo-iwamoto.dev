@@ -27,13 +27,7 @@
       "storybook": "./src/data/contents.mock.ts",
       "default": "./src/data/contents.ts"
     },
-    "#*": [
-      "./*",
-      "./*.ts",
-      "./*.tsx",
-      "./*/index.ts",
-      "./*/index.tsx"
-    ]
+    "#*": ["./*", "./*.ts", "./*.tsx", "./*/index.ts", "./*/index.tsx"]
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.1.0",

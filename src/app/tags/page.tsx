@@ -6,7 +6,7 @@ import { allEntries } from "#src/data/contents";
 export const metadata = {
   title: "Tags | blog.yoiw.dev",
   alternates: {
-    canonical: "/tags/",
+    canonical: "/tags",
   },
 } satisfies Metadata;
 

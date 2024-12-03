@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props) {
     description: `${bodyTextFirst100Letters}...`,
     keywords: article.meta.tags,
     alternates: {
-      canonical: `/posts/${article.meta.slug}/`,
+      canonical: `/posts/${article.meta.slug}`,
     },
   } satisfies Metadata;
 }

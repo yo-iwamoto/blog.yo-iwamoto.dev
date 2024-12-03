@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `「${slug}」に関する記事一覧 | blog.yoiw.dev`,
     alternates: {
-      canonical: `/posts/${slug}/`,
+      canonical: `/posts/${slug}`,
     },
   } satisfies Metadata;
 }

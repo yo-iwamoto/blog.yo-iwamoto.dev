@@ -27,7 +27,7 @@ export const metadata = {
     index: true,
   },
   alternates: {
-    canonical: "/",
+    canonical: "",
   },
 } satisfies Metadata;
 

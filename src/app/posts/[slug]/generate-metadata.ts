@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props) {
   ).slice(0, 100);
 
   return {
-    title: `${article.meta.title} | blog.yo-iwamoto.dev`,
+    title: `${article.meta.title} | blog.yo-iwamoto.me`,
     description: `${bodyTextFirst100Letters}...`,
     keywords: article.meta.tags,
     alternates: {

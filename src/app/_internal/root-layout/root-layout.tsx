@@ -19,7 +19,7 @@ export function RootLayoutHeader() {
           href="/"
           className="font-bold py-1.5 text-lg inline-block hover:underline dark:text-neutral-300"
         >
-          blog.yo-iwamoto.dev
+          blog.yo-iwamoto.me
         </Link>
 
         <nav>

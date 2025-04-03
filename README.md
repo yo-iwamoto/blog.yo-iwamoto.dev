@@ -1,3 +1,3 @@
-# blog.yoiw.dev
+# blog.yo-iwamoto.me
 
-https://blog.yoiw.dev
+https://blog.yo-iwamoto.me

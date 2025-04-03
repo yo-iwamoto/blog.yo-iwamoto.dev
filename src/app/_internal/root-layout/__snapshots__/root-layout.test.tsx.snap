@@ -15,7 +15,7 @@ exports[`Layout > snapshot unchanged 1`] = `
           class="font-bold py-1.5 text-lg inline-block hover:underline dark:text-neutral-300"
           href="/"
         >
-          blog.yoiw.dev
+          blog.yo-iwamoto.me
         </a>
         <nav>
           <ul

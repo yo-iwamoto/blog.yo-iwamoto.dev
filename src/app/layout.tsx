@@ -5,13 +5,13 @@ import type { PropsWithChildren } from "react";
 import { RootLayout } from "./_internal/root-layout";
 
 export const metadata = {
-  title: "blog.yoiw.dev",
+  title: "blog.yo-iwamoto.dev",
   description: "Tech blog by yoiwamoto.",
   metadataBase: new URL(getServerSideEnv().websiteUrl),
   keywords: ["web development", "blog", "frontend", "yoiwamoto"],
   openGraph: {
     type: "article",
-    siteName: "blog.yoiw.dev",
+    siteName: "blog.yo-iwamoto.dev",
     images: {
       url: "/opengraph-image.jpg",
       height: 100,

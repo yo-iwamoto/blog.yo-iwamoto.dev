@@ -35,7 +35,7 @@ describe("Layout", () => {
 
     expect(
       within(getByRole("banner")).getByRole("link", {
-        name: "blog.yoiw.dev",
+        name: "blog.yo-iwamoto.dev",
       }),
     ).toHaveAttribute("href", "/");
   });

@@ -4,7 +4,7 @@ import { Text } from "#src/components/text";
 import { allEntries } from "#src/data/contents";
 
 export const metadata = {
-  title: "Tags | blog.yoiw.dev",
+  title: "Tags | blog.yo-iwamoto.dev",
   alternates: {
     canonical: "/tags",
   },

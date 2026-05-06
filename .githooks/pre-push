@@ -1,4 +1,5 @@
 #!/bin/bash
 
-pnpm check
+pnpm lint
+pnpm format:check
 pnpm typecheck

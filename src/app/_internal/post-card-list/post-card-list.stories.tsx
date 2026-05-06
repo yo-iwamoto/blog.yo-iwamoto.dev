@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import type { ComponentPropsWithoutRef } from "react";
-import { PostCardList } from "./post-card-list";
+import type { Meta, StoryObj } from "@storybook/react"
+import type { ComponentPropsWithoutRef } from "react"
+import { PostCardList } from "./post-card-list"
 
-type Article = ComponentPropsWithoutRef<typeof PostCardList.Card>["article"];
+type Article = ComponentPropsWithoutRef<typeof PostCardList.Card>["article"]
 
 function Component({ articles }: { articles: Article[] }) {
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="mx-auto max-w-4xl">
       <PostCardList.Root>
         {articles.map((article) => (
           <PostCardList.Card key={article.meta.slug} article={article} />
         ))}
       </PostCardList.Root>
     </div>
-  );
+  )
 }
 
 const meta = {
@@ -49,10 +49,10 @@ const meta = {
       },
     ],
   },
-} satisfies Meta<typeof Component>;
+} satisfies Meta<typeof Component>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
-export const Default = {} satisfies Story;
+export const Default = {} satisfies Story

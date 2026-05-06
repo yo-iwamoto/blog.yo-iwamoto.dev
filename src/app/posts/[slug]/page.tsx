@@ -1,33 +1,33 @@
-import { Link } from "#src/components/link";
-import { Text } from "#src/components/text";
-import { allEntries } from "#src/data/contents";
-import "#src/styles/post-body.css";
-import { notFound } from "next/navigation";
-import HighlightNode from "./_internal/highlight-node-internal";
+import { Link } from "#src/components/link"
+import { Text } from "#src/components/text"
+import { allEntries } from "#src/data/contents"
+import "#src/styles/post-body.css"
+import { notFound } from "next/navigation"
+import HighlightNode from "./_internal/highlight-node-internal"
 
-export { generateMetadata } from "./generate-metadata";
-export { generateStaticParams } from "./generate-static-params";
+export { generateMetadata } from "./generate-metadata"
+export { generateStaticParams } from "./generate-static-params"
 
-export const dynamic = "force-static";
+export const dynamic = "force-static"
 
 type Props = {
   params: Promise<{
-    slug: string;
-  }>;
-};
+    slug: string
+  }>
+}
 
 export default async function Page({ params }: Props) {
-  const { slug } = await params;
+  const { slug } = await params
 
-  const article = allEntries.find((entry) => entry.meta.slug === slug);
+  const article = allEntries.find((entry) => entry.meta.slug === slug)
   if (article === undefined) {
-    notFound();
+    notFound()
   }
 
   const {
     meta: { title, tags, publishedAt },
     content,
-  } = article;
+  } = article
 
   return (
     <article className="my-8 grid gap-4">
@@ -47,7 +47,7 @@ export default async function Page({ params }: Props) {
             >
               <Text
                 as="span"
-                className="rounded-lg bg-neutral-800 px-2 py-0.5 text-neutral-200 hover:bg-neutral-600 group-focus-within:bg-neutral-600 dark:bg-neutral-200 dark:text-neutral-800 dark:hover:bg-neutral-400 dark:group-focus-within:bg-neutral-400"
+                className="rounded-lg bg-neutral-800 px-2 py-0.5 text-neutral-200 group-focus-within:bg-neutral-600 hover:bg-neutral-600 dark:bg-neutral-200 dark:text-neutral-800 dark:group-focus-within:bg-neutral-400 dark:hover:bg-neutral-400"
               >
                 {tag}
               </Text>
@@ -65,5 +65,5 @@ export default async function Page({ params }: Props) {
         <HighlightNode />
       </div>
     </article>
-  );
+  )
 }

@@ -1,23 +1,23 @@
-import type { PropsWithChildren } from "react";
-import { Link } from "#src/components/link";
-import { Text } from "#src/components/text/text";
-import { cn } from "#src/lib/utils";
+import type { PropsWithChildren } from "react"
+import { Link } from "#src/components/link"
+import { Text } from "#src/components/text/text"
+import { cn } from "#src/lib/utils"
 
 function PostCardListRoot({ children }: PropsWithChildren) {
-  return <ul className="grid gap-2">{children}</ul>;
+  return <ul className="grid gap-2">{children}</ul>
 }
 
 type PostCardListCardProps = {
   article: {
     meta: {
-      title: string;
-      tags: string[];
-      publishedAt: string;
-      slug: string;
-    };
-    content: string;
-  };
-};
+      title: string
+      tags: string[]
+      publishedAt: string
+      slug: string
+    }
+    content: string
+  }
+}
 
 function PostCardListCard({
   article: {
@@ -31,7 +31,7 @@ function PostCardListCard({
           href={`/posts/${slug}`}
           className={cn(
             "group grid gap-2 rounded-md p-3 hover:bg-neutral-200 dark:hover:bg-neutral-800",
-            "focus-within:bg-neutral-200 focus-within:ring-2 focus-within:ring-neutral-500 focus-within:ring-offset-2 focus:outline-none dark:focus-within:bg-neutral-800",
+            "focus-within:bg-neutral-200 focus-within:ring-2 focus-within:ring-neutral-500 focus-within:ring-offset-2 focus:outline-none dark:focus-within:bg-neutral-800"
           )}
         >
           <Text as="h2" className="text-2xl font-bold">
@@ -56,10 +56,10 @@ function PostCardListCard({
         </Link>
       </article>
     </li>
-  );
+  )
 }
 
 export const PostCardList = {
   Root: PostCardListRoot,
   Card: PostCardListCard,
-};
+}

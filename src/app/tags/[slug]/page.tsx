@@ -1,25 +1,25 @@
-import { notFound } from "next/navigation";
-import { PostCardList } from "#src/app/_internal/post-card-list";
-import { Text } from "#src/components/text";
-import { allEntries } from "#src/data/contents";
+import { notFound } from "next/navigation"
+import { PostCardList } from "#src/app/_internal/post-card-list"
+import { Text } from "#src/components/text"
+import { allEntries } from "#src/data/contents"
 
-export { generateMetadata } from "./generate-metadata";
-export { generateStaticParams } from "./generate-static-params";
+export { generateMetadata } from "./generate-metadata"
+export { generateStaticParams } from "./generate-static-params"
 
-export const dynamic = "force-static";
+export const dynamic = "force-static"
 
 type PageProps = {
   params: Promise<{
-    slug: string;
-  }>;
-};
+    slug: string
+  }>
+}
 
 export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug } = await params
 
-  const articles = allEntries.filter((entry) => entry.meta.tags.includes(slug));
+  const articles = allEntries.filter((entry) => entry.meta.tags.includes(slug))
   if (articles.length === 0) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -35,5 +35,5 @@ export default async function Page({ params }: PageProps) {
         ))}
       </PostCardList.Root>
     </div>
-  );
+  )
 }

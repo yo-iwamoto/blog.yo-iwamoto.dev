@@ -1,1 +1,1 @@
-export { SizedBox } from "./sized-box";
+export { SizedBox } from "./sized-box"

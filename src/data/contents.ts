@@ -1,3 +1,3 @@
-import allEntries from "./contents.json";
+import allEntries from "./contents.json"
 
-export { allEntries };
+export { allEntries }

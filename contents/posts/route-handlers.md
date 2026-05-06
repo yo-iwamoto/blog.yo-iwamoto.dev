@@ -30,9 +30,9 @@ export function GET(req) {
 
 それぞれのインターフェース変更についての細かい意思決定プロセスは全く追っていませんが、ひとまず表面的には以下のような変更があります。
 
-[1. 特定のメソッドに対してのハンドラを named export するようになった](#特定のメソッドに対してのハンドラを-named-export-するようになった)  
+[1. 特定のメソッドに対してのハンドラを named export するようになった](#特定のメソッドに対してのハンドラを-named-export-するようになった)
 
-[2. ファイルを置く場所が変わった](#ファイルを置く場所が変わった)  
+[2. ファイルを置く場所が変わった](#ファイルを置く場所が変わった)
 
 [3. ハンドラの API が変わった](#ハンドラの-api-が変わった)
 
@@ -45,8 +45,8 @@ export function GET(req) {
 
 ```typescript
 export default function handler(req, res) {
-  if (req.method !== 'POST') {
-    res.status(403).json({ error: 'Method not allowed' });
+  if (req.method !== "POST") {
+    res.status(403).json({ error: "Method not allowed" })
   }
 }
 ```
@@ -70,10 +70,10 @@ Route Handlers ではよりローレベル / ブラウザネイティブな API 
 
 ```typescript
 export async function GET(request: NextRequest) {
-  const token = request.cookies.get('token');
-  const response = NextResponse.next();
-  response.cookies.set('token', token);
-  return response;
+  const token = request.cookies.get("token")
+  const response = NextResponse.next()
+  response.cookies.set("token", token)
+  return response
 }
 ```
 

@@ -15,7 +15,6 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "incremental": false,
-    "baseUrl": ".",
     "module": "esnext",
     "resolveJsonModule": true,
     "types": ["vitest/globals"],
@@ -26,6 +25,7 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "vitest.config.ts",
+    "vitest.workspace.ts",
     "tailwind.config.js",
     "postcss.config.js",
     "next.config.js"

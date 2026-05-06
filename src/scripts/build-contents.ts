@@ -1,11 +1,11 @@
-import fs from "node:fs";
-import path from "node:path";
-import rehypeStringify from "rehype-stringify";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import { unified } from "unified";
-import { z } from "zod";
-import { transformArticleHtml } from "../lib/transform-article-html";
+import fs from "node:fs"
+import path from "node:path"
+import rehypeStringify from "rehype-stringify"
+import remarkParse from "remark-parse"
+import remarkRehype from "remark-rehype"
+import { unified } from "unified"
+import { z } from "zod"
+import { transformArticleHtml } from "../lib/transform-article-html"
 
 async function parseMarkdown(markdownString: string) {
   return unified()
@@ -13,7 +13,7 @@ async function parseMarkdown(markdownString: string) {
     .use(remarkRehype)
     .use(rehypeStringify)
     .process(markdownString)
-    .then((vfile) => vfile.value.toString());
+    .then((vfile) => vfile.value.toString())
 }
 
 const frontMatterSchema = z.object({
@@ -24,49 +24,49 @@ const frontMatterSchema = z.object({
     tags
       .slice(1, -1)
       .split(",")
-      .map((tag) => tag.trim()),
+      .map((tag) => tag.trim())
   ),
-});
+})
 
 async function getAllEntries() {
   const entries = await Promise.all(
     fs.readdirSync("contents/posts").map(async (fileName) => {
       const file = fs.readFileSync(
         path.join("contents/posts", fileName),
-        "utf-8",
-      );
-      const [, frontMatterString, body] = file.split("---\n");
-      const frontMatterObject: { [key in string]: string } = {};
+        "utf-8"
+      )
+      const [, frontMatterString, body] = file.split("---\n")
+      const frontMatterObject: { [key in string]: string } = {}
       for (const line of frontMatterString.split("\n")) {
-        const [key, value] = line.split(": ");
-        if (key === "") continue;
+        const [key, value] = line.split(": ")
+        if (key === "") continue
 
-        frontMatterObject[key] = value;
+        frontMatterObject[key] = value
       }
-      const meta = frontMatterSchema.parse(frontMatterObject);
-      const rawContent = await parseMarkdown(body);
-      const content = transformArticleHtml(rawContent);
-      return { content, meta };
-    }),
-  );
+      const meta = frontMatterSchema.parse(frontMatterObject)
+      const rawContent = await parseMarkdown(body)
+      const content = transformArticleHtml(rawContent)
+      return { content, meta }
+    })
+  )
 
-  const sorted = entries.sort((a, b) => {
-    const aTime = new Date(a.meta.publishedAt).getTime();
-    const bTime = new Date(b.meta.publishedAt).getTime();
+  const sorted = entries.toSorted((a, b) => {
+    const aTime = new Date(a.meta.publishedAt).getTime()
+    const bTime = new Date(b.meta.publishedAt).getTime()
 
-    return bTime - aTime;
-  });
+    return bTime - aTime
+  })
 
-  return sorted;
+  return sorted
 }
 
 async function main() {
-  const allEntries = await getAllEntries();
+  const allEntries = await getAllEntries()
   fs.writeFileSync(
     "src/data/contents.json",
     `${JSON.stringify(allEntries, null, 2)}\n`,
-    "utf-8",
-  );
+    "utf-8"
+  )
 }
 
-main();
+main()

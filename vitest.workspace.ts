@@ -1,15 +1,15 @@
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import react from "@vitejs/plugin-react";
-import EnvironmentPlugin from "vite-plugin-environment";
-import { defineConfig, defineWorkspace, mergeConfig } from "vitest/config";
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+import react from "@vitejs/plugin-react"
+import EnvironmentPlugin from "vite-plugin-environment"
+import { defineConfig, mergeConfig } from "vitest/config"
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const baseConfig = defineConfig({
   resolve: {
     alias: {
-      "@": path.join(__dirname, "src"),
+      "@": path.join(dirname, "src"),
     },
   },
   plugins: [EnvironmentPlugin("all")],
@@ -18,7 +18,7 @@ const baseConfig = defineConfig({
     setupFiles: ["src/__tests__/setup.tsx"],
     restoreMocks: true,
   },
-});
+})
 
 const browserConfig = defineConfig({
   plugins: [react()],
@@ -27,7 +27,7 @@ const browserConfig = defineConfig({
     environment: "jsdom",
     exclude: ["src/**/*.node.test.{ts,tsx}", "node_modules"],
   },
-});
+})
 
 const nodeConfig = defineConfig({
   test: {
@@ -35,9 +35,9 @@ const nodeConfig = defineConfig({
     name: "node",
     environment: "node",
   },
-});
+})
 
-export default defineWorkspace([
+export default [
   mergeConfig(baseConfig, browserConfig),
   mergeConfig(baseConfig, nodeConfig),
-]);
+]

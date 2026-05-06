@@ -1,8 +1,8 @@
-import { getServerSideEnv } from "#src/config/env";
-import "#src/styles/global.css";
-import type { Metadata } from "next";
-import type { PropsWithChildren } from "react";
-import { RootLayout } from "./_internal/root-layout";
+import { getServerSideEnv } from "#src/config/env"
+import "#src/styles/global.css"
+import type { Metadata } from "next"
+import type { PropsWithChildren } from "react"
+import { RootLayout } from "./_internal/root-layout"
 
 export const metadata = {
   title: "blog.yo-iwamoto.me",
@@ -29,7 +29,7 @@ export const metadata = {
   alternates: {
     canonical: "",
   },
-} satisfies Metadata;
+} satisfies Metadata
 
 export default async function Layout({ children }: PropsWithChildren) {
   return (
@@ -41,5 +41,5 @@ export default async function Layout({ children }: PropsWithChildren) {
         </RootLayout.Root>
       </body>
     </html>
-  );
+  )
 }

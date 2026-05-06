@@ -1,15 +1,15 @@
-import { Text } from "#src/components/text";
-import { allEntries } from "#src/data/contents";
-import { PostCardList } from "./_internal/post-card-list";
+import { Text } from "#src/components/text"
+import { allEntries } from "#src/data/contents"
+import { PostCardList } from "./_internal/post-card-list"
 
-export const dynamic = "force-static";
+export const dynamic = "force-static"
 
 export default function Page() {
-  const articles = allEntries;
+  const articles = allEntries
 
   return (
-    <div className="grid py-4 gap-4">
-      <Text as="h1" className="font-bold text-xl lg:text-2xl">
+    <div className="grid gap-4 py-4">
+      <Text as="h1" className="text-xl font-bold lg:text-2xl">
         最近のエントリ
       </Text>
 
@@ -19,5 +19,5 @@ export default function Page() {
         ))}
       </PostCardList.Root>
     </div>
-  );
+  )
 }

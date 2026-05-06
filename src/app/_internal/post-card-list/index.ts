@@ -1,1 +1,1 @@
-export { PostCardList } from "./post-card-list";
+export { PostCardList } from "./post-card-list"

@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "react", "nextjs"],
+  "categories": {
+    "correctness": "warn",
+    "suspicious": "warn"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "settings": {
+    "next": {
+      "rootDir": "apps/web/"
+    },
+    "react": {
+      "version": "19.2.4"
+    }
+  },
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/dist/**",
+    "**/.turbo/**",
+    "**/coverage/**",
+    "**/next-env.d.ts"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
+}

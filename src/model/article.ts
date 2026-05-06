@@ -4,6 +4,6 @@ export class Article {
     public slug: string,
     public tags: { name: string; slug: string }[],
     public publishedAt: Date,
-    public body: string,
+    public body: string
   ) {}
 }

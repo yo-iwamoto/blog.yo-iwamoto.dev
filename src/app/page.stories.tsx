@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import Page from "./page";
+import type { Meta, StoryObj } from "@storybook/react"
+import Page from "./page"
 
 const meta = {
   component: Page,
-} satisfies Meta<typeof Page>;
+} satisfies Meta<typeof Page>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
-export const Default = {} satisfies Story;
+export const Default = {} satisfies Story

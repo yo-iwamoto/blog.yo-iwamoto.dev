@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
-import { Link } from "#src/components/link";
-import { Text } from "#src/components/text";
-import { allEntries } from "#src/data/contents";
+import type { Metadata } from "next"
+import { Link } from "#src/components/link"
+import { Text } from "#src/components/text"
+import { allEntries } from "#src/data/contents"
 
 export const metadata = {
   title: "Tags | blog.yo-iwamoto.me",
   alternates: {
     canonical: "/tags",
   },
-} satisfies Metadata;
+} satisfies Metadata
 
-export const dynamic = "force-static";
+export const dynamic = "force-static"
 
 export default async function Page() {
-  const tags: { [key in string]: number } = {};
+  const tags: { [key in string]: number } = {}
   for (const article of allEntries) {
     for (const tag of article.meta.tags) {
-      tags[tag] = (tags[tag] ?? 0) + 1;
+      tags[tag] = (tags[tag] ?? 0) + 1
     }
   }
 
@@ -37,5 +37,5 @@ export default async function Page() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

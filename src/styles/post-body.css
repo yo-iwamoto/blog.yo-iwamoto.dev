@@ -1,10 +1,12 @@
+@reference "./global.css";
+
 .postBody h1,
 .postBody h2,
 .postBody h3,
 .postBody h4,
 .postBody h5,
 .postBody h6 {
-  @apply dark:text-neutral-300 scroll-mt-14 mt-4 mb-2;
+  @apply mt-4 mb-2 scroll-mt-14 dark:text-neutral-300;
 }
 
 .postBody h1 > a,
@@ -23,7 +25,7 @@
 }
 
 .postBody a {
-  @apply focus-visible:rounded-md focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus:outline-none;
+  @apply focus:outline-none focus-visible:rounded-md focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2;
 }
 
 .postBody :not(pre) > code {
@@ -39,7 +41,7 @@
 }
 
 .postBody pre {
-  @apply relative mt-4 max-w-[calc(100vw_-_2rem)] p-0 overflow-visible rounded-md;
+  @apply relative mt-4 max-w-[calc(100vw_-_2rem)] overflow-visible rounded-md p-0;
   @apply has-[.file-name]:mt-14 has-[.file-name]:rounded-tl-none;
 }
 
@@ -48,18 +50,18 @@
 }
 
 .postBody pre .file-name {
-  @apply font-sans tracking-wider absolute -top-7 left-0 text-sm bg-gray-600 dark:bg-gray-700 rounded-t-md py-1 px-2;
+  @apply absolute -top-7 left-0 rounded-t-md bg-gray-600 px-2 py-1 font-sans text-sm tracking-wider dark:bg-gray-700;
 }
 
 /* .hljs にあたるスタイルによるレイアウトシフトを防ぐ */
 .postBody pre code {
-  @apply p-[1em] block;
+  @apply block p-[1em];
   @apply max-w-full overflow-x-auto rounded-md text-sm leading-relaxed md:text-base;
 }
 
 /* アプリケーションレイヤでの transform で挿入した heading link */
 .postBody .heading-link {
-  @apply no-underline relative inline-block;
-  @apply focus-visible:underline focus-visible:before:content-['#'] focus-visible:before:absolute focus-visible:before:text-xl focus-visible:before:-left-3.5 focus-visible:ring-0;
-  @apply hover:underline hover:before:content-['#'] hover:before:absolute hover:before:text-xl hover:before:-left-3.5;
+  @apply relative inline-block no-underline;
+  @apply focus-visible:underline focus-visible:ring-0 focus-visible:before:absolute focus-visible:before:-left-3.5 focus-visible:before:text-xl focus-visible:before:content-['#'];
+  @apply hover:underline hover:before:absolute hover:before:-left-3.5 hover:before:text-xl hover:before:content-['#'];
 }

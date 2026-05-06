@@ -1,10 +1,10 @@
-import type { PropsWithChildren } from "react";
-import type { ComponentPropsWithoutRef, ElementType } from "react";
-import { cn } from "#src/lib/utils";
+import type { PropsWithChildren } from "react"
+import type { ComponentPropsWithoutRef, ElementType } from "react"
+import { cn } from "#src/lib/utils"
 
 type Props<T extends ElementType> = {
-  as?: T;
-} & Omit<ComponentPropsWithoutRef<T>, "as">;
+  as?: T
+} & Omit<ComponentPropsWithoutRef<T>, "as">
 
 export function Text<T extends ElementType = "div">({
   as,
@@ -12,7 +12,7 @@ export function Text<T extends ElementType = "div">({
   className,
   ...props
 }: PropsWithChildren<Props<T>>) {
-  const As = as ?? "div";
+  const As = as ?? "div"
 
   return (
     <As
@@ -21,5 +21,5 @@ export function Text<T extends ElementType = "div">({
     >
       {children}
     </As>
-  );
+  )
 }
